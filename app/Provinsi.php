@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
 
+use App\Kabupaten;
 class Provinsi extends Model
 {
 	use Uuid;
@@ -17,4 +18,8 @@ class Provinsi extends Model
     protected $hidden = [
     	'id'
 	];
+
+	public function kabupaten(){
+        return $this->hasMany('App\Kabupaten','id_provinsi','id');
+    }
 }
