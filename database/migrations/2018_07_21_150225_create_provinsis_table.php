@@ -14,8 +14,7 @@ class CreateProvinsisTable extends Migration
     public function up()
     {
         Schema::create('provinsis', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
+            $table->string('id',36)->primary();
             $table->string('nama_provinsi');
             $table->softDeletes();
         });

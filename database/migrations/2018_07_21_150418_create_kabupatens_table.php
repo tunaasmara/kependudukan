@@ -14,9 +14,8 @@ class CreateKabupatensTable extends Migration
     public function up()
     {
         Schema::create('kabupatens', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
-            $table->unsignedInteger('id_provinsi');
+            $table->string('id',36)->primary();
+            $table->string('id_provinsi',36);
             $table->string('nama_kabupaten');
             $table->softDeletes();
         });

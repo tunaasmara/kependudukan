@@ -14,9 +14,8 @@ class CreateDesasTable extends Migration
     public function up()
     {
         Schema::create('desas', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
-            $table->unsignedInteger('id_kecamatan');
+            $table->string('id',36)->primary();
+            $table->string('id_kecamatan',36);
             $table->string('nama_desa');
             $table->string('kepala_desa');
             $table->softDeletes();

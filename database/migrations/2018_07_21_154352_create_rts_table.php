@@ -14,9 +14,8 @@ class CreateRtsTable extends Migration
     public function up()
     {
         Schema::create('rts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
-            $table->unsignedInteger('id_rw');
+            $table->string('id',36)->primary();
+            $table->string('id_rw',36);
             $table->string('nama_rt');
             $table->string('kepala_rt');
             $table->softDeletes();

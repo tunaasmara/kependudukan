@@ -14,9 +14,8 @@ class CreateRwsTable extends Migration
     public function up()
     {
         Schema::create('rws', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
-            $table->unsignedInteger('id_dusun');
+            $table->string('id',36)->primary();
+            $table->string('id_dusun',36);
             $table->string('nama_rw');
             $table->string('kepala_rw');
             $table->softDeletes();

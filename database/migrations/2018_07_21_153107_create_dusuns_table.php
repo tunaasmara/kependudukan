@@ -14,9 +14,8 @@ class CreateDusunsTable extends Migration
     public function up()
     {
         Schema::create('dusuns', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('uuid',36);
-            $table->unsignedInteger('id_desa');
+            $table->string('id',36)->primary();
+            $table->string('id_desa',36);
             $table->string('nama_dusun');
             $table->string('kepala_dusun');
             $table->softDeletes();
