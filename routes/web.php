@@ -18,4 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/coba', 'HomeController@coba')->name('coba');
 Route::get('/provinsi/{provinsi}', 'ProvinsiController@create')->name('provinsi.create');
+
+
+Route::get('/surat-input', 'HomeController@suratInput')->name('suratInput');
+Route::get('/surat-data', 'HomeController@suratData')->name('suratData');
+
+Route::get('/penduduk-input', 'HomeController@pendudukInput')->name('pendudukInput');
+Route::get('/penduduk-data', 'HomeController@pendudukData')->name('pendudukData');
+
+Route::get('/kk-input', 'HomeController@kkInput')->name('kkInput');
+Route::get('/kk-data', 'HomeController@kkData')->name('kkData');

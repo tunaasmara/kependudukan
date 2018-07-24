@@ -25,4 +25,39 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function coba()
+    {
+        return view('coba');
+    }
+
+    public function suratInput()
+    {
+        return view('surat.input');
+    }
+
+    public function suratData()
+    {
+        return view('surat.data');
+    }
+
+    public function pendudukInput()
+    {
+        return view('penduduk.input');
+    }
+
+    public function pendudukData()
+    {
+        return view('penduduk.data');
+    }
+
+    public function kkInput()
+    {
+        return view('kk.input');
+    }
+
+    public function kkData()
+    {
+        return view('kk.data');
+    }
 }
