@@ -25,7 +25,6 @@ Route::get('/provinsi/{provinsi}', 'ProvinsiController@create')->name('provinsi.
 Route::get('/surat-input', 'HomeController@suratInput')->name('suratInput');
 Route::get('/surat-data', 'HomeController@suratData')->name('suratData');
 
-Route::get('/penduduk-input', 'HomeController@pendudukInput')->name('pendudukInput');
 Route::get('/penduduk-data', 'HomeController@pendudukData')->name('pendudukData');
 
 Route::get('/kk-input', 'HomeController@kkInput')->name('kkInput');

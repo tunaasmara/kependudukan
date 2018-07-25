@@ -41,11 +41,6 @@ class HomeController extends Controller
         return view('surat.data');
     }
 
-    public function pendudukInput()
-    {
-        return view('penduduk.input');
-    }
-
     public function pendudukData()
     {
         return view('penduduk.data');

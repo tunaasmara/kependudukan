@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <title>{{ config('app.name', 'Laravel') }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <link rel="stylesheet" href="{{ asset('assets/font-awesome/css/font-awesome.min.css')}}">
-<link rel="stylesheet" href="{{ asset('assets/css/form-elements.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets/css/form-elements.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -284,7 +284,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('pendudukInput')}}">Input Data Penduduk</a></li>
             <li><a href="{{route('pendudukData')}}">Data Penduduk</a></li>
           </ul>
         </li>
@@ -410,8 +409,6 @@ immediately after the control sidebar -->
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js')}}"></script>
-<script src="{{ asset('assets/js/jquery-1.11.1.min.js')}}"></script>
 <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
 <script src="{{ asset('assets/js/jquery.backstretch.min.js')}}"></script>
 <script src="{{ asset('assets/js/retina-1.1.0.min.js')}}"></script>
