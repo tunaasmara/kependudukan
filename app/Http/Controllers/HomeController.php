@@ -41,9 +41,14 @@ class HomeController extends Controller
         return view('surat.data');
     }
 
-    public function pendudukData()
+    public function pendudukKtp()
     {
-        return view('penduduk.data');
+        return view('penduduk.ktp');
+    }
+
+    public function pendudukSku()
+    {
+        return view('penduduk.sku');
     }
 
     public function kkInput()

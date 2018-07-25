@@ -260,7 +260,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('pendudukData')}}">Data Penduduk</a></li>
+            <li><a href="{{route('pendudukKtp')}}">KTP</a></li>
+            <li><a href="{{route('pendudukSku')}}">Surat Keterangan Usaha</a></li>
           </ul>
         </li>
         <li class="treeview">
