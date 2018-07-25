@@ -7,12 +7,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Permohonan Surat
-      <small>Data Permohonan Surat</small>
+      Penduduk
+      <small>Data Penduduk</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Permohonan Surat</a></li>
-      <li class="active"></li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Penduduk</a></li>
+      <li class="active">Data Penduduk</li>
     </ol>
   </section>
 

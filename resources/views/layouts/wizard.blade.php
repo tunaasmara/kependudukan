@@ -43,6 +43,21 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font -->
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+        <style>
+          .example-modal .modal {
+            position: relative;
+            top: auto;
+            bottom: auto;
+            right: auto;
+            left: auto;
+            display: block;
+            z-index: 1;
+          }
+
+          .example-modal .modal {
+            background: transparent !important;
+          }
+        </style>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
