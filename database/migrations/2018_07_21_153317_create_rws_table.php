@@ -36,7 +36,7 @@ class CreateRwsTable extends Migration
     {
         Schema::table('rws', function(Blueprint $table)
         {
-            $table->dropForeign('rws_id_dusuns_foreign');
+            $table->dropForeign('rws_id_dusun_foreign');
         });
 
         Schema::dropIfExists('rws');
