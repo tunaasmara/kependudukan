@@ -10,6 +10,7 @@ class Kk extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'nomor_kk','alamat','rt','rw','desa','kecamatan','kabupaten_kota','kode_pos','provinsi','tanggal_dikeluarkan','status'

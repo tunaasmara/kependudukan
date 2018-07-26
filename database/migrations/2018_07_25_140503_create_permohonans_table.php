@@ -20,6 +20,7 @@ class CreatePermohonansTable extends Migration
             $table->string('id_penduduk');
             $table->string('dipergunakan_untuk');
             $table->string('status');
+            $table->timestamps();
             $table->softDeletes();
         });
     }

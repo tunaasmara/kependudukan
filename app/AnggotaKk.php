@@ -4,13 +4,17 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Penduduk;
 use App\Kk;
 class AnggotaKk extends Model
 {
     use Uuid;
+    use SoftDeletes;
+    
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_kk','id_penduduk','no_paspor','status'

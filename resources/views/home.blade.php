@@ -23,6 +23,7 @@
       | Your Page Content Here |
       -------------------------->
 
+      {{$user->hasRole('warga')}}
   </section>
   <!-- /.content -->
 </div>

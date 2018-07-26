@@ -11,6 +11,7 @@ class SyaratPermohonan extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_permohonan','id_syarat_surat','terpenuhi'

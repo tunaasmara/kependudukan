@@ -11,6 +11,7 @@ class Kecamatan extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_kabupaten','kode_pos','nama_kecamatan'

@@ -11,6 +11,7 @@ class TipeSurat extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'nama_tipe','keterangan'

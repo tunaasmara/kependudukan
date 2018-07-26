@@ -11,6 +11,7 @@ class Kabupaten extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'nama_kabupaten','id_provinsi'
