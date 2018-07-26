@@ -10,6 +10,7 @@ class Rt extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_rw','nama_rt','kepala_rt'

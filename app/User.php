@@ -4,13 +4,19 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Traits\Uuid;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
+
+use Ramsey\Uuid\Exception\UnsatisfiedDependencyException;
+use Ramsey\Uuid\Uuid as Generator;
 
 class User extends Authenticatable
 {
     use Notifiable;
-    use Uuid;
+    use EntrustUserTrait;
 
+
+    public $incrementing = false;
     /**
      * The attributes that are mass assignable.
      *
@@ -28,4 +34,16 @@ class User extends Authenticatable
     protected $hidden = [
         'id','password', 'remember_token',
     ];
+
+    protected static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            try {
+                $model->id = Generator::uuid4()->toString();
+            } catch (UnsatisfiedDependencyException $e) {
+                abort(500, $e->getMessage());
+            }
+        });
+    }
 }

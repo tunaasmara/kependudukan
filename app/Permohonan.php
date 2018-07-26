@@ -11,7 +11,7 @@ use App\SyaratPermohonan;
 class Permohonan extends Model
 {
     use Uuid;
-	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'kode_permohonan','id_tipe_surat','id_penduduk','dipergunakan_untuk','status'

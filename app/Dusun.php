@@ -11,6 +11,7 @@ class Dusun extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_desa','nama_dusun','kepala_dusun'

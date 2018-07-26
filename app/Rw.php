@@ -11,6 +11,7 @@ class Rw extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_dusun','nama_rw','kepala_rw'

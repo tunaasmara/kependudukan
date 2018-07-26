@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
 class HomeController extends Controller
 {
     /**
@@ -13,7 +14,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware(['auth']);
     }
 
     /**
@@ -23,7 +24,22 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if (Auth::user()->hasRole('admin')) {
+
+            $data['user'] = Auth::user();
+            return redirect(route('admin.home'));
+
+        }elseif (Auth::user()->hasRole('pegawai')) {
+
+            $data['user'] = Auth::user();
+            return view('home')->with($data);
+
+        }elseif (Auth::user()->hasRole('warga')) {
+            
+            $data['user'] = Auth::user();
+            return view('home')->with($data);
+
+        }
     }
 
     public function coba()

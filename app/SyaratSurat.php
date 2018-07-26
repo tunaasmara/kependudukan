@@ -10,6 +10,7 @@ class SyaratSurat extends Model
 {
     use Uuid;
 	public $timestamps = false;
+    public $incrementing = false;
 
     protected $fillable = [
         'id_tipe_surat','syarat','nilai_syarat'
