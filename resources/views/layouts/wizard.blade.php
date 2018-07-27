@@ -53,7 +53,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
             display: block;
             z-index: 1;
           }
-
           .example-modal .modal {
             background: transparent !important;
           }

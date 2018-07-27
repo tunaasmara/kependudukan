@@ -13,3 +13,4 @@
 
 Route::get('/', 'AdminHomeController@index')->name('admin.home');
 Route::resource('users', 'UserController');
+Route::get('/fetchUser', ['as' => 'fetch.user', 'uses' => 'UserController@fetchUser']);
