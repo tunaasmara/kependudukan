@@ -25,7 +25,8 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::user()->hasRole('admin')) {
-            
+
+            $data['user'] = Auth::user();
             return redirect(route('admin.home'));
 
         }elseif (Auth::user()->hasRole('pegawai')) {
@@ -34,16 +35,11 @@ class HomeController extends Controller
             return view('home')->with($data);
 
         }elseif (Auth::user()->hasRole('warga')) {
-            
+
             $data['user'] = Auth::user();
             return view('home')->with($data);
 
         }
-    }
-
-    public function coba()
-    {
-        return view('coba');
     }
 
     public function suratInput()
