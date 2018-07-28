@@ -113,37 +113,37 @@
                   <div class="form-group row required">
                       {!! Form::label("name","Nama",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::text("name",null,["class"=>"form-control".($errors->has('name')?" is-invalid":""),'placeholder'=>'Name','id'=>'focus']) !!}
-                          <span id="error-name" class="invalid-feedback"></span>
+                          {!! Form::text("name",null,["class"=>"form-control inputan".($errors->has('name')?" is-invalid":""),'placeholder'=>'Name','id'=>'focus']) !!}
+                          <span id="error-name" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
                   <div class="form-group row required">
                       {!! Form::label("email","Email",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::text("email",null,["class"=>"form-control".($errors->has('email')?" is-invalid":""),'placeholder'=>'Email']) !!}
-                          <span id="error-email" class="invalid-feedback"></span>
+                          {!! Form::text("email",null,["class"=>"inputan form-control".($errors->has('email')?" is-invalid":""),'placeholder'=>'Email']) !!}
+                          <span id="error-email" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
                   <div class="form-group row required">
                       {!! Form::label("role","User Role",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          <select class="form-control{{($errors->has('password')?' is-invalid':'')}}" name="role" id="role">
+                          <select class="inputan form-control{{($errors->has('password')?' is-invalid':'')}}" name="role" id="role">
                         </select>
-                          <span id="error-role" class="invalid-feedback"></span>
+                          <span id="error-role" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
                   <div class="form-group row required">
                       {!! Form::label("password","Password",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::password("password",["class"=>"form-control".($errors->has('password')?" is-invalid":""),'placeholder'=>'password']) !!}
-                          <span id="error-password" class="invalid-feedback"></span>
+                          {!! Form::password("inputan password",["class"=>"form-control".($errors->has('password')?" is-invalid":""),'placeholder'=>'password']) !!}
+                          <span id="error-password" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
                   <div class="form-group row required">
-                      {!! Form::label("password_confirmation","Konfirmasi Password",["class"=>"col-form-label col-md-2"]) !!}
+                      {!! Form::label("inputanpassword_confirmation","Konfirmasi Password",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::password("password_confirmation",["class"=>"form-control".($errors->has('password_confirmation')?" is-invalid":""),'placeholder'=>'password_confirmation']) !!}
-                          <span id="error-password_confirmation" class="invalid-feedback"></span>
+                          {!! Form::password("inputan password_confirmation",["class"=>"form-control".($errors->has('password_confirmation')?" is-invalid":""),'placeholder'=>'password_confirmation']) !!}
+                          <span id="error-password_confirmation" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
       </div>
@@ -397,7 +397,8 @@ $(document).on('submit', 'form#frms', function (event) {
   }
 
 $('#modal-default').on('hidden.bs.modal', function () {
-    $(this).find("input,select").val([]);
+    $(this).find(".inputan").val([]);
+    $(this).find(".inputan-error").html('');
 });
 
 
