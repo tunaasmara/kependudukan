@@ -20,6 +20,7 @@
         <li class="header">Admin Menu</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Alamat</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-folder"></i> <span>Users</span>
             <span class="pull-right-container">

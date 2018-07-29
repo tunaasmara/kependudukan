@@ -319,20 +319,21 @@ $('#modalDelete').on('show.bs.modal', function (event) {
 $(document).on('click', '.user-edit', function(){
         var id = $(this).data('id');
         var roleId;
-        
+
         $.ajax({
             url:"{{ url('admin/fetchDataUser/') }}/"+id,
             method:'get',
             dataType:'json',
             success:function(data)
             {
+              console.log(data);
                 $('#edit-name').val(data[0].name);
                 $('#edit-email').val(data[0].email);
                 $('#frms').attr('action', "{{ url('admin/users/') }}/"+id);
                 $('#modal-edit').modal('show');
                 roleEdit(data[0].roles[0].id);
             }
-        });   
+        });
     });
 
 $(document).on('submit', 'form#frms', function (event) {

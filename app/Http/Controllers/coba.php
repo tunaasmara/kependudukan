@@ -8,6 +8,6 @@ class coba extends Controller
 {
   public function coba()
   {
-      return view('auth.index');
+      return view('coba');
   }
 }
