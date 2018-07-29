@@ -11,52 +11,54 @@
 
     <div class="modal-body">
       <form role="form" action="" method="post" class="f1" style="text-align: center;">
-        <h3><strong><u>Surat Keterangan Kelahiran</u></strong></h3>
+        <h3><strong><u>Surat Keterangan Domisili</u></strong></h3>
         <p>No Reg : <input type="text" name="f1-first-name" placeholder="No Reg.." id="f1-first-name" style="border:none; font-size:12px;"></p>
         <fieldset style="border: none;">
             <!-- <h4>Pengisian Surat Keterangan Usaha</h4> -->
           <p>Yang bertanda tangan dibawah ini Kepala Desa / Kelurahan Legok Kecamatan Gempol Kabupaten Pasuruan, menerangkan dengan sebenarnya bahwa :</p>
           <table>
             <tr>
-              <td width="40%">Hari</td>
-              <td width="60%">: <input type="text" name="f1-first-name" placeholder="Rabu" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              <td width="40%">Nama</td>
+              <td width="60%">: <input type="text" name="f1-first-name" placeholder="Pardi" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
-              <td>Tanggal Lahir</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="23 Maret 2017" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              <td>Tempat / Tanggal Lahir</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="Pasuruan, 09/11/1995" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
-              <td>Tempat Lahir</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="Pasuruan" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              <td>Kebangsaan</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="Indonesia" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
-              <td>Telah Lahir Anak Perempuan</td>
+              <td>Jenis Kelamin</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="Laki - laki" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
-              <td>Nama</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="ANA ISMI AZMIL" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              <td>Agama</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="Islam" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
-              <td>Dari Seorang Ibu Bernama</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="ASROKAH" id="f1-first-name" style="border:none; font-size:12px;"></td>
-            </tr>
-            <tr>
-              <td>Alamat</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="Watukosek 04/01, Gempol " id="f1-first-name" style="border:none; font-size:12px;"></td>
-            </tr>
-            <tr>
-              <td>Istri Dari</td>
-              <td>: <input type="text" name="f1-first-name" placeholder="Tahmid" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              <td>NIK / KK / SIM</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="802924009102" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
             <tr>
               <td>Alamat</td>
               <td>: <input type="text" name="f1-first-name" placeholder="Watukosek 04/01, Gempol " id="f1-first-name" style="border:none; font-size:12px;"></td>
+            </tr>
+            <tr>
+              <td>Pekerjaan</td>
+              <td>: <input type="text" name="f1-first-name" placeholder="PNS" id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
           </table>
-            <p style="text-align:left">Demikian Surat Keterangan ini dibuat dengan sebenarnya untuk dapat  dipergunakan sebagaimana mestinya</p>
+          <p style="text-align:left">Keterangan</p>
+            <p style="text-align:left;">1. Bahwa orang tersebut benar - benar Berdomisili / bertempat tinggal di Dusun Ngering  Gg. Rajawali, Rt ... Rw ... Desa Legok Kecamatan Gempol Kabupaten Pasuruan
+            <br>2. Surat Keterangan ini dipergunakan sebagai persyaratan melamar pekerjaan dan lain - lain
+            <br>3. Berlaku Surat : s/d .....</p>
+
+            <p>Demikian Surat Keterangan ini dibuat dengan sebenarnya untuk dapat  dipergunakan sebagaimana mestinya</p>
             <div style="float:left">
-              <!-- <p><b>Tanda Tangan Ybs</b></p>
-              <p style="margin-top:120px;text-align:center"> <input type="text" name="" value="" placeholder="Parno" style="border:none; font-size:12px;text-align:center"> </p> -->
+              <p><b>Tanda Tangan Ybs</b></p>
+              <p style="margin-top:120px;text-align:center"> <input type="text" name="" value="" placeholder="Parno" style="border:none; font-size:12px;text-align:center"> </p>
             </div>
             <div style="float:right">
               <p>Legok, <?php echo date('d M Y'); ?></p>
