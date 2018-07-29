@@ -135,14 +135,14 @@
                   <div class="form-group row required">
                       {!! Form::label("password","Password",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::password("inputan password",["class"=>"form-control".($errors->has('password')?" is-invalid":""),'placeholder'=>'password']) !!}
+                          {!! Form::password("password",["class"=>"form-control inputan".($errors->has('password')?" is-invalid":""),'placeholder'=>'password']) !!}
                           <span id="error-password" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
                   <div class="form-group row required">
                       {!! Form::label("inputanpassword_confirmation","Konfirmasi Password",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          {!! Form::password("inputan password_confirmation",["class"=>"form-control".($errors->has('password_confirmation')?" is-invalid":""),'placeholder'=>'password_confirmation']) !!}
+                          {!! Form::password("password_confirmation",["class"=>"form-control inputan".($errors->has('password_confirmation')?" is-invalid":""),'placeholder'=>'password_confirmation']) !!}
                           <span id="error-password_confirmation" class="invalid-feedback inputan-error"></span>
                       </div>
                   </div>
