@@ -17,10 +17,6 @@ class Kabupaten extends Model
         'nama_kabupaten','id_provinsi'
     ];
 
-    protected $hidden = [
-    	'id'
-	];
-
 	public function provinsi(){
         return $this->belongsTo('App\Provinsi','id_provinsi');
     }

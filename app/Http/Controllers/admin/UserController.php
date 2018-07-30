@@ -103,9 +103,7 @@ class UserController extends Controller
 
     public function fetchDataUser($user)
     {
-    	$user = User::where('id',$user)->with(['roles'=>
-    			function ($query) {$query->select('id', 'name');}
-    		])->get();
+    	$user = User::where('id',$user)->with('roles')->get();
     	
     	return response()->json($user);
     }

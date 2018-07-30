@@ -127,7 +127,7 @@
                   <div class="form-group row required">
                       {!! Form::label("role","User Role",["class"=>"col-form-label col-md-2"]) !!}
                       <div class="col-md-10">
-                          <select class="inputan form-control{{($errors->has('password')?' is-invalid':'')}}" name="role" id="role">
+                          <select class="inputan form-control{{($errors->has('role')?' is-invalid':'')}}" name="role" id="role">
                         </select>
                           <span id="error-role" class="invalid-feedback inputan-error"></span>
                       </div>
@@ -326,7 +326,6 @@ $(document).on('click', '.user-edit', function(){
             dataType:'json',
             success:function(data)
             {
-              console.log(data);
                 $('#edit-name').val(data[0].name);
                 $('#edit-email').val(data[0].email);
                 $('#frms').attr('action', "{{ url('admin/users/') }}/"+id);
@@ -349,7 +348,6 @@ $(document).on('submit', 'form#frms', function (event) {
         contentType: false,
         processData: false,
         success: function (data) {
-            console.log(data);
             $('.is-invalid').removeClass('is-invalid');
             if (data.fail) {
                 for (control in data.errors) {
@@ -388,7 +386,6 @@ $(document).on('submit', 'form#frms', function (event) {
     $.get('{{ route('fetch.roles') }}',function(data) {
                       $('#edit-role').empty();
                       $.each(data, function(index, role){
-                        console.log(id);
                         if(id == role.id)
                         $('#edit-role').append('<option value="'+ role.id +'" selected>'+ role.name +'</option>');
                         else

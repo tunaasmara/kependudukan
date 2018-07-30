@@ -17,10 +17,6 @@ class Kecamatan extends Model
         'id_kabupaten','kode_pos','nama_kecamatan'
     ];
 
-    protected $hidden = [
-    	'id'
-	];
-
 	public function desa(){
         return $this->hasMany('App\Desa','id_kecamatan','id');
     }
