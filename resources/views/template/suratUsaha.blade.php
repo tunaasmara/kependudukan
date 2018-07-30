@@ -46,7 +46,7 @@
               <td>: <input type="text" name="f1-first-name" placeholder="Watukosek 04/01, Gempol " id="f1-first-name" style="border:none; font-size:12px;"></td>
             </tr>
           </table>
-          <p>Keterangan</p>
+          <p style="text-align:left;">Keterangan</p>
             <textarea name="keterangan" rows="8" cols="80" style="width:100%;border:none"> Keterangan ..</textarea>
             <p>Demikian Surat Keterangan ini dibuat dengan sebenarnya untuk dapat  dipergunakan sebagaimana mestinya</p>
             <div style="float:left">
@@ -66,3 +66,7 @@
 </div>
 <!-- /.content -->
 </div>
+
+<script type="text/javascript">
+        window.print();
+    </script>

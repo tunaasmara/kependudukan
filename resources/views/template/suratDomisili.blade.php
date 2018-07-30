@@ -73,3 +73,6 @@
 </div>
 <!-- /.content -->
 </div>
+<script type="text/javascript">
+        window.print();
+    </script>
