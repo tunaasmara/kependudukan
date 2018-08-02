@@ -9,9 +9,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
-  <title>{{ config('app.name', 'Laravel') }}</title>
+  <title>{{ config('app.name', 'Laravel') }} @if (isset($title))
+    |
+  @endif {{ $title or '' }}</title>
 
-  @yield('header')
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="{{ asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
@@ -32,7 +33,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-
+  @yield('header')
 
   <!-- Google Font -->
   <link rel="stylesheet"
@@ -47,9 +48,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Logo -->
     <a href="index2.html" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>A</b>LT</span>
+      <span class="logo-mini"><small><b>{{ config('app.name', 'Laravel') }}</b></small></span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Admin</b>LTE</span>
+      <span class="logo-lg">{{ config('app.name', 'Laravel') }}</span>
     </a>
 
     <!-- Header Navbar -->
@@ -68,31 +69,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <!-- The user image in the navbar-->
               <img src="{{ asset('dist/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Alexander Pierce</span>
+              <span class="hidden-xs">{{$user->name}}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
               <img src="{{ asset('dist/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  {{$user->name}}
+                  <small>Member since {{$user->created_at->diffForHumans()}}</small>
                 </p>
-              </li>
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
-                </div>
-                <!-- /.row -->
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
@@ -100,7 +86,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a class="dropdown-item" href="{{ route('logout') }}"
+                  <a class="dropdown-item btn btn-default btn-flat" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
@@ -141,10 +127,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <footer class="main-footer">
   <!-- To the right -->
   <div class="pull-right hidden-xs">
-    Anything you want
+    Made With ❤
   </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2018 <a href="#">Tunaasmara.id</a>.</strong> All rights reserved.
+  <strong>Copyright &copy; 2018 <a href="#">PPDM</a>.</strong> All rights reserved.
 </footer>
 
 <!-- ./wrapper -->
@@ -165,13 +151,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.min.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
-
-@yield('footer')
 <!-- page script -->
 
 <script type="text/javascript">
     
-    $.AdminLTESidebarTweak = {};
+$.AdminLTESidebarTweak = {};
 
 $.AdminLTESidebarTweak.options = {
     EnableRemember: true,
@@ -210,6 +194,8 @@ $(function () {
 });
 
 </script>
+
+@yield('footer')
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
    Both of these plugins are recommended to enhance the

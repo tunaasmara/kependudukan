@@ -42,33 +42,5 @@ class HomeController extends Controller
         }
     }
 
-    public function suratInput()
-    {
-        return view('surat.input');
-    }
-
-    public function suratData()
-    {
-        return view('surat.data');
-    }
-
-    public function pendudukKtp()
-    {
-        return view('penduduk.ktp');
-    }
-
-    public function pendudukSku()
-    {
-        return view('penduduk.sku');
-    }
-
-    public function kkInput()
-    {
-        return view('kk.input');
-    }
-
-    public function kkData()
-    {
-        return view('kk.data');
-    }
+    
 }

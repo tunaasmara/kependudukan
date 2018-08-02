@@ -15,7 +15,7 @@ class CreateDusunsTable extends Migration
     {
         Schema::create('dusuns', function (Blueprint $table) {
             $table->string('id',36)->primary();
-            $table->string('id_desa',36);
+            $table->char('id_kel',10);
             $table->string('nama_dusun');
             $table->string('kepala_dusun');
             $table->softDeletes();
@@ -23,7 +23,7 @@ class CreateDusunsTable extends Migration
 
         Schema::table('dusuns', function(Blueprint $table)
         {
-            $table->foreign('id_desa')->references('id')->on('desas')->onDelete('cascade');
+            $table->foreign('id_kel')->references('id_kel')->on('kelurahan')->onDelete('cascade');
         });
     }
 
@@ -36,7 +36,7 @@ class CreateDusunsTable extends Migration
     {
         Schema::table('dusuns', function(Blueprint $table)
         {
-            $table->dropForeign('dusuns_id_desa_foreign');
+            $table->dropForeign('dusuns_id_kel_foreign');
         });
 
         Schema::dropIfExists('dusuns');

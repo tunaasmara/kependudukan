@@ -1,4 +1,4 @@
-@extends('layouts.wizard')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -7,12 +7,12 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      KTP Penduduk
-      <small>Data KTP Penduduk</small>
+      Surat Keterangan Usaha
+      <small>Data Surat Keterangan Usaha</small>
     </h1>
     <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> KTP Penduduk</a></li>
-      <li class="active">Data KTP Penduduk</li>
+      <li><a href="#"><i class="fa fa-dashboard"></i> Surat Keterangan Usaha</a></li>
+      <li class="active">Data Surat Keterangan Usaha</li>
     </ol>
   </section>
 
@@ -472,116 +472,70 @@
 <div class="modal fade" id="modal-default">
   <div class="modal-dialog">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="text-align:center">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
+        <h3 style="text-align:center; font-weight:800">PEMERINTAH KABUPATEN PASURUAN <br> KECAMATAN GEMPOL <br> KEPALA DESA LEGOK</h3>
+        <p style="line-height:0;">Jl. Desa Legok No. 1 telp (0343) 656662</p>
+        <p  style="line-height:1;">Kode Pos 67155</p>
+        <p  style="line-height:0;"> Email : desalegok.gempol@ymail.com</p>
+        <p  style="line-height:1;">blog : desalegok.gempol@gmail.com</p>
+        <hr style="border: solid;margin-top:-3px;">
       </div>
+
       <div class="modal-body">
         <form role="form" action="" method="post" class="f1" style="text-align: center;">
-          <h3>Data Kartu Tanda Penduduk</h3>
-          <p>Input Data Kartu Tanda Penduduk</p>
-          <div class="f1-steps">
-            <div class="f1-progress">
-                <div class="f1-progress-line" data-now-value="16.66" data-number-of-steps="3" style="width: 16.66%;"></div>
-            </div>
-            <div class="f1-step active">
-              <div class="f1-step-icon"><i class="fa fa-user"></i></div>
-              <p>Data Umum</p>
-            </div>
-            <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-home"></i></div>
-              <p>Alamat Lengkap</p>
-            </div>
-              <div class="f1-step">
-              <div class="f1-step-icon"><i class="fa fa-check"></i></div>
-              <p>Lain-Lain</p>
-            </div>
-          </div>
-
+          <h3><strong><u>Surat Keterangan Usaha</u></strong></h3>
+          <p>No Reg : <input type="text" name="f1-first-name" placeholder="No Reg.." id="f1-first-name" style="border:none; font-size:12px;"></p>
           <fieldset>
-              <h4>Data Umum</h4>
-            <div class="form-group">
-                <label class="sr-only" for="f1-first-name">NIK</label>
-                      <input type="text" name="f1-first-name" placeholder="NIK..." class="f1-first-name form-control" id="f1-first-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Nama Lengkap..." class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Tempat/Tanggal Lahir" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="f1-buttons">
-                      <button type="button" class="btn btn-next">Next</button>
-                  </div>
+              <!-- <h4>Pengisian Surat Keterangan Usaha</h4> -->
+            <p>Yang bertanda tangan dibawah ini Kepala Desa / Kelurahan Legok Kecamatan Gempol Kabupaten Pasuruan, menerangkan dengan sebenarnya bahwa :</p>
+            <table>
+              <tr>
+                <td width="40%">Nama</td>
+                <td width="60%">: <input type="text" name="f1-first-name" placeholder="Pardi" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>Tempat/Tanggal Lahir</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="Pasuruan, 09/11/1995" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>Kebangsaan</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="Indonesia" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>Jenis Kelamin</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="Laki - laki" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>Agama</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="Islam" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>NIK / KK / SIM</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="802924009102" id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+              <tr>
+                <td>Alamat</td>
+                <td>: <input type="text" name="f1-first-name" placeholder="Watukosek 04/01, Gempol " id="f1-first-name" style="border:none; font-size:12px;"></td>
+              </tr>
+            </table>
+            <p>Keterangan</p>
+              <textarea name="keterangan" rows="8" cols="80" style="width:100%;border:none"> Keterangan ..</textarea>
+              <p>Demikian Surat Keterangan ini dibuat dengan sebenarnya untuk dapat  dipergunakan sebagaimana mestinya</p>
+              <div style="float:left">
+                <p><b>Tanda Tangan Ybs</b></p>
+                <p style="margin-top:50px;"> <input type="text" name="" value="" placeholder="Parno" style="border:none; font-size:12px;"> </p>
+              </div>
+              <div style="float:right">
+                <p>Legok, <?php echo date('d M Y'); ?></p>
+                <p style="line-height:0"><b>KEPALA DESA LEGOK</b></p>
+                <p style="margin-top:40px;"> <input type="text" name="" value="" placeholder="H. Dawam Aly, S.Sos" style="border:none; font-size:12px;"> </p>
+              </div>
               </fieldset>
-
-              <fieldset>
-                  <h4>Anggota Keluarga</h4>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-about-yourself">Alamat</label>
-                      <textarea name="f1-about-yourself" placeholder="Alamat..."
-                                         class="f1-about-yourself form-control" id="f1-about-yourself"></textarea>
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="RT/RW" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Desa/Kelurahan" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Kecamatan" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Kabupaten/Kota" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Kode Pos" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Provinsi" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="f1-buttons">
-                      <button type="button" class="btn btn-previous">Previous</button>
-                      <button type="button" class="btn btn-next">Next</button>
-                  </div>
-              </fieldset>
-
-              <fieldset>
-                  <h4>Lain - Lain</h4>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Agama" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Status Perkawinan" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Pekerjaan" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="text" name="f1-last-name" placeholder="Kewarganegaraan" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="form-group">
-                      <label class="sr-only" for="f1-last-name"></label>
-                      <input type="date" name="f1-last-name" placeholder="Berlaku Hingga" class="f1-last-name form-control" id="f1-last-name">
-                  </div>
-                  <div class="f1-buttons">
-                      <button type="button" class="btn btn-previous">Previous</button>
-                      <button type="submit" class="btn btn-submit">Submit</button>
-                  </div>
-              </fieldset>
-
+              <div class="f1-buttons" style="margin-top:20px;">
+                  <button type="button" class="btn btn-next">Finish</button>
+              </div>
         </form>
       </div>
       <div class="modal-footer">

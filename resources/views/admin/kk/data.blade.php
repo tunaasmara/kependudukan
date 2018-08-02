@@ -1,4 +1,4 @@
-@extends('layouts.wizard')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -7,13 +7,8 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      Surat Keterangan Usaha
-      <small>Data Surat Keterangan Usaha</small>
-    </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> Surat Keterangan Usaha</a></li>
-      <li class="active">Data Surat Keterangan Usaha</li>
-    </ol>
+      {{$title or "Title"}}
+      <small>{{$title or "Title"}}</small>
   </section>
 
   <!-- Main content -->
@@ -23,10 +18,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Data Permohonan Surat</h3>
-          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default" style="color:#fff; background:#3c8dbc;float:right">
-            Tambah Data
-          </button>
+          <h3 class="box-title">{{$title or "Title"}}</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
@@ -469,83 +461,6 @@
   <!-- /.row -->
 </section>
 </section>
-<div class="modal fade" id="modal-default">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header" style="text-align:center">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span></button>
-        <h3 style="text-align:center; font-weight:800">PEMERINTAH KABUPATEN PASURUAN <br> KECAMATAN GEMPOL <br> KEPALA DESA LEGOK</h3>
-        <p style="line-height:0;">Jl. Desa Legok No. 1 telp (0343) 656662</p>
-        <p  style="line-height:1;">Kode Pos 67155</p>
-        <p  style="line-height:0;"> Email : desalegok.gempol@ymail.com</p>
-        <p  style="line-height:1;">blog : desalegok.gempol@gmail.com</p>
-        <hr style="border: solid;margin-top:-3px;">
-      </div>
-
-      <div class="modal-body">
-        <form role="form" action="" method="post" class="f1" style="text-align: center;">
-          <h3><strong><u>Surat Keterangan Usaha</u></strong></h3>
-          <p>No Reg : <input type="text" name="f1-first-name" placeholder="No Reg.." id="f1-first-name" style="border:none; font-size:12px;"></p>
-          <fieldset>
-              <!-- <h4>Pengisian Surat Keterangan Usaha</h4> -->
-            <p>Yang bertanda tangan dibawah ini Kepala Desa / Kelurahan Legok Kecamatan Gempol Kabupaten Pasuruan, menerangkan dengan sebenarnya bahwa :</p>
-            <table>
-              <tr>
-                <td width="40%">Nama</td>
-                <td width="60%">: <input type="text" name="f1-first-name" placeholder="Pardi" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>Tempat/Tanggal Lahir</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="Pasuruan, 09/11/1995" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>Kebangsaan</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="Indonesia" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>Jenis Kelamin</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="Laki - laki" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>Agama</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="Islam" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>NIK / KK / SIM</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="802924009102" id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-              <tr>
-                <td>Alamat</td>
-                <td>: <input type="text" name="f1-first-name" placeholder="Watukosek 04/01, Gempol " id="f1-first-name" style="border:none; font-size:12px;"></td>
-              </tr>
-            </table>
-            <p>Keterangan</p>
-              <textarea name="keterangan" rows="8" cols="80" style="width:100%;border:none"> Keterangan ..</textarea>
-              <p>Demikian Surat Keterangan ini dibuat dengan sebenarnya untuk dapat  dipergunakan sebagaimana mestinya</p>
-              <div style="float:left">
-                <p><b>Tanda Tangan Ybs</b></p>
-                <p style="margin-top:50px;"> <input type="text" name="" value="" placeholder="Parno" style="border:none; font-size:12px;"> </p>
-              </div>
-              <div style="float:right">
-                <p>Legok, <?php echo date('d M Y'); ?></p>
-                <p style="line-height:0"><b>KEPALA DESA LEGOK</b></p>
-                <p style="margin-top:40px;"> <input type="text" name="" value="" placeholder="H. Dawam Aly, S.Sos" style="border:none; font-size:12px;"> </p>
-              </div>
-              </fieldset>
-              <div class="f1-buttons" style="margin-top:20px;">
-                  <button type="button" class="btn btn-next">Finish</button>
-              </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-    <!-- /.modal-content -->
-  </div>
-  <!-- /.modal-dialog -->
-</div>
 <!-- /.content -->
 </div>
 @endsection

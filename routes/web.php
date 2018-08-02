@@ -22,11 +22,4 @@ Route::get('/coba', 'coba@coba')->name('coba');
 Route::get('/provinsi/{provinsi}', 'ProvinsiController@create')->name('provinsi.create');
 
 
-Route::get('/surat-input', 'HomeController@suratInput')->name('suratInput');
-Route::get('/surat-data', 'HomeController@suratData')->name('suratData');
 
-Route::get('/penduduk-ktp', 'HomeController@pendudukKtp')->name('pendudukKtp');
-Route::get('/penduduk-sku', 'HomeController@pendudukSku')->name('pendudukSku');
-
-Route::get('/kk-input', 'HomeController@kkInput')->name('kkInput');
-Route::get('/kk-data', 'HomeController@kkData')->name('kkData');

@@ -16,7 +16,7 @@ class UserController extends Controller
     public function index()
     {
     	$data['user'] = Auth::user();
-
+        $data['title'] = "Data Users";
         return view('admin.user.index')->with($data);
     }
 

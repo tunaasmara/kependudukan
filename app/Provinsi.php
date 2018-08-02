@@ -3,20 +3,20 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\Uuid;
 
 use App\Kabupaten;
 class Provinsi extends Model
 {
-	use Uuid;
+
+	protected $table = 'provinsi';
 	public $timestamps = false;
     public $incrementing = false;
 
-    protected $fillable = [
-        'nama_provinsi'
-    ];
+    protected $primaryKey = 'id_prov';
+
+
 
 	public function kabupaten(){
-        return $this->hasMany('App\Kabupaten','id_provinsi','id');
+        return $this->hasMany('App\Kabupaten','id_prov','id_prov');
     }
 }

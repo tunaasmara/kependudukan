@@ -11,24 +11,12 @@ use App\Desa;
 use App\Kecamatan;
 class DesaController extends Controller
 {
-    public function fetchDesa()
+    public function fetchDesa($kecamatan)
     {
-    	$desa = Desa::with(['kecamatan' => function($query){
-                            $query->with(['kabupaten' => function($query){
-                            	$query->with('provinsi');
-                    		}]);
-                    }
-    		])->get();
-          return Datatables::of($desa)
-          ->addColumn('action', function ($desa) {
-                return '<button class="desa-edit btn btn-xs btn-warning" data-id="'.$desa->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</button> <input type="hidden" name="_method" value="delete"/>
-                    <a class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                       href="#modalDelete-desa"
-                       data-id="'.$desa->id.'"
-                       data-token="'.csrf_token().'"><i class="glyphicon glyphicon-remove">Delete</a>';
-            })
-          	->addIndexColumn()
-            ->make(true);
+    	if (isset($kecamatan)) {
+            $desa = Desa::where('id_kec',$kecamatan)->select(['id_kel','nama'])->get();
+            return response()->json($desa);
+        }
     }
 
     public function store(Request $request)

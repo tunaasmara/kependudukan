@@ -20,7 +20,7 @@
         <li class="header">Admin Menu</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="#"><i class="fa fa-dashboard"></i> <span>Alamat</span></a></li>
+        <li><a href="{{ route('admin.alamat') }}"><i class="fa fa-dashboard"></i> <span>Alamat</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-folder"></i> <span>Users</span>
             <span class="pull-right-container">
@@ -45,12 +45,13 @@
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Identitas Penduduk</span>
+          <a href="#"><i class="fa fa-users"></i> <span>Penduduk</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{route('pendudukKtp')}}">Penduduk</a></li>
             <li><a href="{{route('pendudukKtp')}}">KTP</a></li>
             <li><a href="{{route('pendudukSku')}}">Surat Keterangan Usaha</a></li>
           </ul>

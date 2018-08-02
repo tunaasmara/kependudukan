@@ -3,32 +3,28 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Traits\Uuid;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Kecamatan;
 use App\Dusun;
+use App\Jenis;
 class Desa extends Model
 {
-    use Uuid;
-    use SoftDeletes;
-    
-	public $timestamps = false;
+
+    protected $table = 'kelurahan';
+    public $timestamps = false;
     public $incrementing = false;
 
-    protected $fillable = [
-        'id_kecamatan','nama_desa','kepala_desa'
-    ];
-
-    protected $hidden = [
-    	'id'
-	];
+    protected $primaryKey = 'id_kel';
 
 	public function kecamatan(){
-        return $this->belongsTo('App\Kecamatan','id_kecamatan');
+        return $this->belongsTo('App\Kecamatan','id_kec');
     }
 
     public function dusun(){
-        return $this->hasMany('App\Dusun','id_desa','id');
+        return $this->hasMany('App\Dusun','id_kel','id_kel');
+    }
+
+    public function jenis(){
+        return $this->belongsTo('App\Jenis','id_jenis');
     }
 }

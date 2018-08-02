@@ -18,11 +18,11 @@
 
 <body class="gray-bg">
 
-    <div class="middle-box text-center loginscreen animated fadeInDown">
+    <div class="middle-box text-center animated fadeInDown">
         <div>
             <div>
 
-            <h1> <img src="{{asset('assets/img/pas-logo.png')}}" width="40%"> </h1>
+            <img src="{{asset('assets/img/pas-logo.png')}}" >
 
             </div>
             <h3>REGISTRASI</h3>
@@ -65,7 +65,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary block full-width m-b">{{ __('Register') }}</button>
               </form>
-            <p class="m-t"> <small>Aplikasi Kependudukan  &copy; 2018</small> </p>
+            <strong>Copyright &copy; 2018 <a href="#">PPDM</a>.</strong> All rights reserved.
         </div>
     </div>
 

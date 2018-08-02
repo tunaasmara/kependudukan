@@ -16,10 +16,6 @@ class Rt extends Model
         'id_rw','nama_rt','kepala_rt'
     ];
 
-    protected $hidden = [
-    	'id'
-	];
-
 	public function rw(){
         return $this->belongsTo('App\Rw','id_rw');
     }

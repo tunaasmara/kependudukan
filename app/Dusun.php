@@ -4,25 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Desa;
 use App\Rw;
 class Dusun extends Model
 {
-    use Uuid;
+    use Uuid, SoftDeletes;
 	public $timestamps = false;
     public $incrementing = false;
 
     protected $fillable = [
-        'id_desa','nama_dusun','kepala_dusun'
+        'id_kel','nama_dusun','kepala_dusun'
     ];
 
-    protected $hidden = [
-    	'id'
-	];
-
 	public function desa(){
-        return $this->belongsTo('App\Desa','id_desa');
+        return $this->belongsTo('App\Desa','id_kel');
     }
 
     public function rw(){

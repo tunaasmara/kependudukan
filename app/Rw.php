@@ -4,12 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Dusun;
 use App\Rt;
 class Rw extends Model
 {
-    use Uuid;
+    use Uuid, SoftDeletes;
 	public $timestamps = false;
     public $incrementing = false;
 
@@ -17,15 +18,11 @@ class Rw extends Model
         'id_dusun','nama_rw','kepala_rw'
     ];
 
-    protected $hidden = [
-    	'id'
-	];
-
 	public function dusun(){
-        return $this->belongsTo('App\Dusun','id_dusun');
+        return $this->belongsTo('App\Dusun','id_dusun')->withTrashed();
     }
 
     public function rt(){
-        return $this->hasMany('App\Rt','id_rw','id');
+        return $this->hasMany('App\Rt','id_rw','id')->withTrashed();
     }
 }

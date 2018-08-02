@@ -42,13 +42,9 @@
   <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      KTP Penduduk
-      <small>Data KTP Penduduk</small>
+      {{ $title or '' }}
+      <small>{{ $title or '' }}</small>
     </h1>
-    <ol class="breadcrumb">
-      <li><a href="#"><i class="fa fa-dashboard"></i> KTP Penduduk</a></li>
-      <li class="active">Data KTP Penduduk</li>
-    </ol>
   </section>
 
   <!-- Main content -->
@@ -58,7 +54,7 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">Data Permohonan Surat</h3>
+          <h3 class="box-title">{{ $title or '' }}</h3>
           <button type="button" class="btn btn-primary pull-right" data-toggle="modal" onclick="roleLoads()" data-target="#modal-default">
             Tambah Data
           </button>
