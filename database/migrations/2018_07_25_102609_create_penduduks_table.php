@@ -15,7 +15,7 @@ class CreatePenduduksTable extends Migration
     {
         Schema::create('penduduks', function (Blueprint $table) {
             $table->string('id',36)->primary();
-            $table->string('nik',20);
+            $table->string('nik',20)->unique();
             $table->string('nama',50);
             $table->string('tempat_lahir');
             $table->date('tanggal_lahir');
@@ -26,6 +26,7 @@ class CreatePenduduksTable extends Migration
             $table->string('status_perkawinan');
             $table->string('pendidikan');
             $table->string('nama_ibu');
+            $table->string('nama_ayah');
             $table->string('gol_darah',2);
             $table->string('alamat');
             $table->string('rt',3);
@@ -36,8 +37,8 @@ class CreatePenduduksTable extends Migration
             $table->string('kabupaten_kota');
             $table->string('provinsi');
             $table->string('nomer_telepon');
-            $table->string('status_ktp');
-            $table->string('status');
+            $table->boolean('status_ktp')->default(0);
+            $table->timestamps();
             $table->softDeletes();
         });
     }

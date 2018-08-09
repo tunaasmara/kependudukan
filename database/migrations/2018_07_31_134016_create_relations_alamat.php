@@ -13,22 +13,22 @@ class CreateRelationsAlamat extends Migration
      */
     public function up()
     {
-        Schema::table('kecamatan', function(Blueprint $table)
-        {
-            $table->foreign('id_kab')->references('id_kab')->on('kabupaten')->onDelete('cascade');
-        });
+        // Schema::table('kecamatan', function(Blueprint $table)
+        // {
+        //     $table->foreign('id_kab')->references('id_kab')->on('kabupaten')->onDelete('cascade');
+        // });
 
-        Schema::table('kabupaten', function(Blueprint $table)
-        {
-            $table->foreign('id_prov')->references('id_prov')->on('provinsi')->onDelete('cascade');
-            $table->foreign('id_jenis')->references('id_jenis')->on('jenis')->onDelete('cascade');
-        });
+        // Schema::table('kabupaten', function(Blueprint $table)
+        // {
+        //     $table->foreign('id_prov')->references('id_prov')->on('provinsi')->onDelete('cascade');
+        //     $table->foreign('id_jenis')->references('id_jenis')->on('jenis')->onDelete('cascade');
+        // });
 
-        Schema::table('kelurahan', function(Blueprint $table)
-        {
-            $table->foreign('id_kec')->references('id_kec')->on('kecamatan')->onDelete('cascade');
-            $table->foreign('id_jenis')->references('id_jenis')->on('jenis')->onDelete('cascade');
-        });
+        // Schema::table('kelurahan', function(Blueprint $table)
+        // {
+        //     $table->foreign('id_kec')->references('id_kec')->on('kecamatan')->onDelete('cascade');
+        //     $table->foreign('id_jenis')->references('id_jenis')->on('jenis')->onDelete('cascade');
+        // });
     }
 
     /**
@@ -38,21 +38,21 @@ class CreateRelationsAlamat extends Migration
      */
     public function down()
     {
-        Schema::table('kecamatan', function(Blueprint $table)
-        {
-            $table->dropForeign('kecamatan_id_kab_foreign');
-        });
+        // Schema::table('kecamatan', function(Blueprint $table)
+        // {
+        //     $table->dropForeign('kecamatan_id_kab_foreign');
+        // });
 
-        Schema::table('kabupaten', function(Blueprint $table)
-        {
-            $table->dropForeign('kabupaten_id_prov_foreign');
-            $table->dropForeign('kabupaten_id_jenis_foreign');
-        });
+        // Schema::table('kabupaten', function(Blueprint $table)
+        // {
+        //     $table->dropForeign('kabupaten_id_prov_foreign');
+        //     $table->dropForeign('kabupaten_id_jenis_foreign');
+        // });
 
-        Schema::table('kelurahan', function(Blueprint $table)
-        {
-            $table->dropForeign('kelurahan_id_kec_foreign');
-            $table->dropForeign('kelurahan_id_jenis_foreign');
-        });
+        // Schema::table('kelurahan', function(Blueprint $table)
+        // {
+        //     $table->dropForeign('kelurahan_id_kec_foreign');
+        //     $table->dropForeign('kelurahan_id_jenis_foreign');
+        // });
     }
 }

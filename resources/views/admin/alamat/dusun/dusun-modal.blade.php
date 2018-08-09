@@ -16,7 +16,7 @@
                                   <div class="form-group row required">
                                       {!! Form::label("provinsi","Pilih Provinsi",["class"=>"col-form-label col-md-2"]) !!}
                                       <div class="col-md-10">
-                                          <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker inputan-dusun form-control{{($errors->has('provinsi')?' is-invalid':'')}}" name="provinsi" id="dusun-provinsi">
+                                          <select data-live-search="true" class="selectpicker inputan-dusun form-control{{($errors->has('provinsi')?' is-invalid':'')}}" name="provinsi" id="dusun-provinsi">
                                         </select>
                                           <span id="error-dusun-provinsi" class="invalid-feedback inputan-error-dusun"></span>
                                       </div>
@@ -24,7 +24,7 @@
                                   <div class="form-group row required">
                                       {!! Form::label("kabupaten","Pilih Kabupaten",["class"=>"col-form-label col-md-2"]) !!}
                                       <div class="col-md-10">
-                                          <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker inputan-dusun form-control{{($errors->has('kabupaten')?' is-invalid':'')}}" name="kabupaten" id="dusun-kabupaten">
+                                          <select data-live-search="true" class="selectpicker inputan-dusun form-control{{($errors->has('kabupaten')?' is-invalid':'')}}" name="kabupaten" id="dusun-kabupaten">
                                         </select>
                                           <span id="error-dusun-kabupaten" class="invalid-feedback inputan-error-dusun"></span>
                                       </div>
@@ -32,7 +32,7 @@
                                   <div class="form-group row required">
                                       {!! Form::label("kecamatan","Pilih Kecamatan",["class"=>"col-form-label col-md-2"]) !!}
                                       <div class="col-md-10">
-                                          <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker inputan-dusun form-control{{($errors->has('kecamatan')?' is-invalid':'')}}" name="kecamatan" id="dusun-kecamatan">
+                                          <select data-live-search="true" class="selectpicker inputan-dusun form-control{{($errors->has('kecamatan')?' is-invalid':'')}}" name="kecamatan" id="dusun-kecamatan">
                                         </select>
                                           <span id="error-dusun-kecamatan" class="invalid-feedback inputan-error-dusun"></span>
                                       </div>
@@ -40,7 +40,7 @@
                                   <div class="form-group row required">
                                       {!! Form::label("desa","Pilih desa",["class"=>"col-form-label col-md-2"]) !!}
                                       <div class="col-md-10">
-                                          <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker inputan-dusun form-control{{($errors->has('desa')?' is-invalid':'')}}" name="desa" id="dusun-desa">
+                                          <select data-live-search="true" class="selectpicker inputan-dusun form-control{{($errors->has('desa')?' is-invalid':'')}}" name="desa" id="dusun-desa">
                                         </select>
                                           <span id="error-dusun-desa" class="invalid-feedback inputan-error-dusun"></span>
                                       </div>
@@ -115,7 +115,7 @@
                                   <div class="form-group row required">
                                           <label for="provinsi" class="col-form-label col-md-2">Provinsi</label>
                                           <div class="col-md-10">
-                                              <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker form-control" name="provinsi" id="edit-dusun-provinsi">
+                                              <select data-live-search="true" class="selectpicker form-control" name="provinsi" id="edit-dusun-provinsi">
                                             </select>
                                               <span id="errors-edit-dusun-provinsi" class="invalid-feedback errors-edit-dusun"></span>
                                           </div>
@@ -123,7 +123,7 @@
                                   <div class="form-group row required">
                                           <label for="kabupaten" class="col-form-label col-md-2">Kabupaten</label>
                                           <div class="col-md-10">
-                                              <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker form-control" name="kabupaten" id="edit-dusun-kabupaten">
+                                              <select data-live-search="true" class="selectpicker form-control" name="kabupaten" id="edit-dusun-kabupaten">
                                             </select>
                                               <span id="errors-edit-dusun-kabupaten" class="invalid-feedback errors-edit-dusun"></span>
                                           </div>
@@ -131,7 +131,7 @@
                                   <div class="form-group row required">
                                           <label for="kecamatan" class="col-form-label col-md-2">Kecamatan</label>
                                           <div class="col-md-10">
-                                              <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker form-control" name="kecamatan" id="edit-dusun-kecamatan">
+                                              <select data-live-search="true" class="selectpicker form-control" name="kecamatan" id="edit-dusun-kecamatan">
                                             </select>
                                               <span id="errors-edit-dusun-kecamatan" class="invalid-feedback errors-edit-dusun"></span>
                                           </div>
@@ -139,7 +139,7 @@
                                   <div class="form-group row required">
                                           <label for="desa" class="col-form-label col-md-2">Desa</label>
                                           <div class="col-md-10">
-                                              <select data-live-search="true" data-live-search-style="startsWith" class="selectpicker form-control" name="desa" id="edit-dusun-desa">
+                                              <select data-live-search="true" class="selectpicker form-control" name="desa" id="edit-dusun-desa">
                                             </select>
                                               <span id="errors-edit-dusun-desa" class="invalid-feedback errors-edit-dusun"></span>
                                           </div>
@@ -169,3 +169,4 @@
                   </div>
                   <!-- /.modal-dialog -->
                 </div>
+

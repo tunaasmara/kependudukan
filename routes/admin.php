@@ -21,29 +21,12 @@ Route::get('/fetchRoles', ['as' => 'fetch.roles', 'uses' => 'UserController@fetc
 
 // Alamat CRUD
 Route::get('/alamat', 'AlamatController@index')->name('admin.alamat');
-// provinsi
-// Route::resource('provinsi', 'ProvinsiController');
-// Route::get('/fetchProvinsi', ['as' => 'fetch.provinsi', 'uses' => 'ProvinsiController@fetchProvinsi']);
-// Route::get('/fetchDataProvinsi/{provinsi}', ['as' => 'fetch.data.provinsi', 'uses' => 'ProvinsiController@fetchDataProvinsi']);
 
 // // kabupaten
-// Route::resource('kabupaten', 'KabupatenController');
 Route::get('/fetchDesa/{kecamatan}', 'DesaController@fetchDesa');
 Route::get('/fetchKecamatan/{kabupaten}','KecamatanController@fetchKecamatan');
 Route::get('/fetchKabupaten/{provinsi}', 'KabupatenController@fetchKabupaten');
 Route::get('/fetchProvinsi','ProvinsiController@fetchProvinsi');
-
-
-// // kecamatan
-// Route::resource('kecamatan', 'KecamatanController');
-// Route::get('/fetchKecamatan', 'KecamatanController@fetchKecamatan');
-// Route::get('/fetchDataKecamatan/{kecamatan}','KecamatanController@fetchDataKecamatan');
-// Route::get('/kecamatan-fetchKabupaten/{provinsi}','KecamatanController@fetchKabupaten');
-
-// // desa
-// Route::resource('desa', 'DesaController');
-// Route::get('/fetchDataDesa/{desa}','DesaController@fetchDataDesa');
-// Route::get('/fetchDesaKecamatan/{kabupaten}','DesaController@fetchDesaKecamatan');
 
 // dusun
 Route::resource('dusun', 'DusunController');
@@ -60,11 +43,24 @@ Route::get('/formFetchRw/{dusun}', 'RwController@formFetchRw');
 // rw
 Route::resource('penduduk', 'PendudukController');
 Route::get('/fetchPenduduk', 'PendudukController@fetchPenduduk');
+Route::post('/pendudukAktifKtp/{penduduk}', 'PendudukController@pendudukAktifKtp');
+Route::get('/fetchDataPenduduk/{rt}', 'PendudukController@fetchDataPenduduk');
+
+// rw
+Route::resource('kk', 'KkController');
+Route::get('/fetchKk', 'KkController@fetchKk');
+
+// rw
+Route::resource('pekerjaan', 'PekerjaanController');
+Route::get('/fetchPekerjaan', 'PekerjaanController@fetchPekerjaan');
+Route::get('/fetchDataPekerjaan/{pekerjaan}', 'PekerjaanController@fetchDataPekerjaan');
+Route::get('/fetchFormPekerjaan', 'PekerjaanController@fetchFormPekerjaan');
 
 // rt
 Route::resource('rt', 'RtController');
 Route::get('/fetchRt', 'RtController@fetchRt');
 Route::get('/fetchDataRt/{rt}', 'RtController@fetchDataRt');
+Route::get('/formFetchRt/{rw}', 'RtController@formFetchRt');
 
 
 Route::get('/surat-input', 'AdminHomeController@suratInput')->name('suratInput');

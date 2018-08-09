@@ -143,7 +143,7 @@ function RtProvinsiLoads()
           $('#rt-provinsi').empty();
           $('#rt-provinsi').append('<option value="">Pilih Provinsi</option>');
           $.each(data, function(index, provinsi){
-            $('#rt-provinsi').append('<option value="'+ provinsi.id_prov +'">'+ provinsi.nama +'</option>');
+            $('#rt-provinsi').append('<option data-tokens="'+ provinsi.nama +'" value="'+ provinsi.id_prov +'">'+ provinsi.nama +'</option>');
           });
           $('#rt-provinsi').selectpicker('refresh');
         });
@@ -157,9 +157,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-provinsi').append('<option value="">Pilih Provinsi</option>');
           $.each(data, function(index, provinsi){
             if(id_prov == provinsi.id_prov)
-              $('#edit-rt-provinsi').append('<option value="'+ provinsi.id_prov +'" selected>'+ provinsi.nama +'</option>');
+              $('#edit-rt-provinsi').append('<option data-tokens="'+ provinsi.nama +'" value="'+ provinsi.id_prov +'" selected>'+ provinsi.nama +'</option>');
             else
-              $('#edit-rt-provinsi').append('<option value="'+ provinsi.id_prov +'">'+ provinsi.nama +'</option>');
+              $('#edit-rt-provinsi').append('<option data-tokens="'+ provinsi.nama +'" value="'+ provinsi.id_prov +'">'+ provinsi.nama +'</option>');
           });
           $('#edit-rt-provinsi').selectpicker('refresh');
         });
@@ -169,9 +169,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-kabupaten').append('<option value="">Pilih Kabupaten</option>');
           $.each(data, function(index, kabupaten){
             if(id_kab == kabupaten.id_kab)
-              $('#edit-rt-kabupaten').append('<option value="'+ kabupaten.id_kab +'" selected>'+ kabupaten.nama +'</option>');
+              $('#edit-rt-kabupaten').append('<option data-tokens="'+ kabupaten.nama +'" value="'+ kabupaten.id_kab +'" selected>'+ kabupaten.nama +'</option>');
             else
-              $('#edit-rt-kabupaten').append('<option value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
+              $('#edit-rt-kabupaten').append('<option data-tokens="'+ kabupaten.nama +'" value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
           });
           $('#edit-rt-kabupaten').selectpicker('refresh');
         });
@@ -181,9 +181,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-kecamatan').append('<option value="">Pilih Kecamatan</option>');
           $.each(data, function(index, kecamatan){
             if(id_kec == kecamatan.id_kec)
-              $('#edit-rt-kecamatan').append('<option value="'+ kecamatan.id_kec +'" selected>'+ kecamatan.nama +'</option>');
+              $('#edit-rt-kecamatan').append('<option data-tokens="'+ kecamatan.nama +'" value="'+ kecamatan.id_kec +'" selected>'+ kecamatan.nama +'</option>');
             else
-              $('#edit-rt-kecamatan').append('<option value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
+              $('#edit-rt-kecamatan').append('<option data-tokens="'+ kecamatan.nama +'" value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
           });
           $('#edit-rt-kecamatan').selectpicker('refresh');
         });
@@ -193,9 +193,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-desa').append('<option value="">Pilih desa</option>');
           $.each(data, function(index, desa){
             if(id_kel == desa.id_kel)
-              $('#edit-rt-desa').append('<option value="'+ desa.id_kel +'" selected>'+ desa.nama +'</option>');
+              $('#edit-rt-desa').append('<option data-tokens="'+ desa.nama +'" value="'+ desa.id_kel +'" selected>'+ desa.nama +'</option>');
             else
-              $('#edit-rt-desa').append('<option value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
+              $('#edit-rt-desa').append('<option data-tokens="'+ desa.nama +'" value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
           });
           $('#edit-rt-desa').selectpicker('refresh');
         });
@@ -205,9 +205,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-dusun').append('<option value="">Pilih Dusun</option>');
           $.each(data, function(index, dusun){
             if(id_dusun == dusun.id)
-              $('#edit-rt-dusun').append('<option value="'+ dusun.id +'" selected>'+ dusun.nama_dusun +'</option>');
+              $('#edit-rt-dusun').append('<option data-tokens="'+ dusun.nama_dusun +'" value="'+ dusun.id +'" selected>'+ dusun.nama_dusun +'</option>');
             else
-              $('#edit-rt-dusun').append('<option value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
+              $('#edit-rt-dusun').append('<option data-tokens="'+ dusun.nama_dusun +'" value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
           });
           $('#edit-rt-dusun').selectpicker('refresh');
         });
@@ -217,9 +217,9 @@ function loadEditRt(id_prov,id_kab,id_kec,id_kel,id_dusun,id_rw)
           $('#edit-rt-rw').append('<option value="">Pilih Rw</option>');
           $.each(data, function(index, rw){
             if(id_rw == rw.id)
-              $('#edit-rt-rw').append('<option value="'+ rw.id +'" selected>'+ rw.nama_rw +'</option>');
+              $('#edit-rt-rw').append('<option data-tokens="'+ rw.nama_rw +'" value="'+ rw.id +'" selected>'+ rw.nama_rw +'</option>');
             else
-              $('#edit-rt-rw').append('<option value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
+              $('#edit-rt-rw').append('<option data-tokens="'+ rw.nama_rw +'" value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
           });
           $('#edit-rt-rw').selectpicker('refresh');
         });
@@ -246,6 +246,8 @@ $(function() {
         $('#rt-desa').selectpicker('refresh');
         $('#rt-dusun').empty();
         $('#rt-dusun').selectpicker('refresh');
+        $('#rt-rw').empty();
+        $('#rt-rw').selectpicker('refresh');
     }else{
         $.get('/admin/fetchKabupaten/'+provinsi,function(data) {
           $('#rt-kabupaten').empty();
@@ -256,9 +258,11 @@ $(function() {
           $('#rt-desa').selectpicker('refresh');
           $('#rt-dusun').empty();
           $('#rt-dusun').selectpicker('refresh');
+          $('#rt-rw').empty();
+          $('#rt-rw').selectpicker('refresh');
             $('#rt-kabupaten').append('<option value="">Pilih kabupaten</option>');
               $.each(data, function(index, kabupaten){
-                $('#rt-kabupaten').append('<option value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
+                $('#rt-kabupaten').append('<option data-tokens="'+ kabupaten.nama +'" value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
               });  
             $('#rt-kabupaten').selectpicker('refresh');        
         });
@@ -277,6 +281,8 @@ $(function() {
         $('#rt-desa').selectpicker('refresh');
         $('#rt-dusun').empty();
         $('#rt-dusun').selectpicker('refresh');
+        $('#rt-rw').empty();
+        $('#rt-rw').selectpicker('refresh');
     }else{
         $.get('/admin/fetchKecamatan/'+kabupaten,function(data) {
           $('#rt-kecamatan').empty();
@@ -285,9 +291,11 @@ $(function() {
           $('#rt-desa').selectpicker('refresh');
           $('#rt-dusun').empty();
           $('#rt-dusun').selectpicker('refresh');
+          $('#rt-rw').empty();
+          $('#rt-rw').selectpicker('refresh');
             $('#rt-kecamatan').append('<option value="">Pilih Kecamatan</option>');
               $.each(data, function(index, kecamatan){
-                $('#rt-kecamatan').append('<option value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
+                $('#rt-kecamatan').append('<option data-tokens="'+ kecamatan.nama +'" value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
               });  
             $('#rt-kecamatan').selectpicker('refresh');        
         });
@@ -304,15 +312,19 @@ $(function() {
         $('#rt-desa').selectpicker('refresh');
         $('#rt-dusun').empty();
         $('#rt-dusun').selectpicker('refresh');
+        $('#rt-rw').empty();
+        $('#rt-rw').selectpicker('refresh');
     }else{
         $.get('/admin/fetchDesa/'+kecamatan,function(data) {
           $('#rt-desa').empty();
           $('#rt-desa').selectpicker('refresh');
           $('#rt-dusun').empty();
           $('#rt-dusun').selectpicker('refresh');
+          $('#rt-rw').empty();
+          $('#rt-rw').selectpicker('refresh');
             $('#rt-desa').append('<option value="">Pilih Desa</option>');
               $.each(data, function(index, desa){
-                $('#rt-desa').append('<option value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
+                $('#rt-desa').append('<option data-tokens="'+ desa.nama +'" value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
               });  
             $('#rt-desa').selectpicker('refresh');        
         });
@@ -326,13 +338,17 @@ $(function() {
       if(!desa){
         $('#rt-dusun').empty();
         $('#rt-dusun').selectpicker('refresh');
+        $('#rt-rw').empty();
+        $('#rt-rw').selectpicker('refresh');
     }else{
         $.get('/admin/formFetchDusun/'+desa,function(data) {
           $('#rt-dusun').empty();
           $('#rt-dusun').selectpicker('refresh');
+          $('#rt-rw').empty();
+          $('#rt-rw').selectpicker('refresh');
             $('#rt-dusun').append('<option value="">Pilih dusun</option>');
               $.each(data, function(index, dusun){
-                $('#rt-dusun').append('<option value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
+                $('#rt-dusun').append('<option data-tokens="'+ dusun.nama_dusun +'" value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
               });  
             $('#rt-dusun').selectpicker('refresh');        
         });
@@ -352,7 +368,7 @@ $(function() {
           $('#rt-rw').selectpicker('refresh');
             $('#rt-rw').append('<option value="">Pilih Rw</option>');
               $.each(data, function(index, rw){
-                $('#rt-rw').append('<option value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
+                $('#rt-rw').append('<option data-tokens="'+ rw.nama_rw +'" value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
               });  
             $('#rt-rw').selectpicker('refresh');        
         });
@@ -394,7 +410,7 @@ $(function() {
           $('#edit-rt-rw').selectpicker('refresh');
             $('#edit-rt-kabupaten').append('<option value="">Pilih kabupaten</option>');
               $.each(data, function(index, kabupaten){
-                $('#edit-rt-kabupaten').append('<option value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
+                $('#edit-rt-kabupaten').append('<option data-tokens="'+ kabupaten.nama +'" value="'+ kabupaten.id_kab +'">'+ kabupaten.nama +'</option>');
               });  
             $('#edit-rt-kabupaten').selectpicker('refresh');        
         });
@@ -427,7 +443,7 @@ $(function() {
           $('#edit-rt-rw').selectpicker('refresh');
             $('#edit-rt-kecamatan').append('<option value="">Pilih Kecamatan</option>');
               $.each(data, function(index, kecamatan){
-                $('#edit-rt-kecamatan').append('<option value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
+                $('#edit-rt-kecamatan').append('<option data-tokens="'+ kecamatan.nama +'" value="'+ kecamatan.id_kec +'">'+ kecamatan.nama +'</option>');
               });  
             $('#edit-rt-kecamatan').selectpicker('refresh');        
         });
@@ -456,7 +472,7 @@ $(function() {
           $('#edit-rt-rw').selectpicker('refresh');
             $('#edit-rt-desa').append('<option value="">Pilih Desa</option>');
               $.each(data, function(index, desa){
-                $('#edit-rt-desa').append('<option value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
+                $('#edit-rt-desa').append('<option data-tokens="'+ desa.nama +'" value="'+ desa.id_kel +'">'+ desa.nama +'</option>');
               });  
             $('#edit-rt-desa').selectpicker('refresh');        
         });
@@ -480,7 +496,7 @@ $(function() {
           $('#edit-rt-rw').selectpicker('refresh');
             $('#edit-rt-dusun').append('<option value="">Pilih dusun</option>');
               $.each(data, function(index, dusun){
-                $('#edit-rt-dusun').append('<option value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
+                $('#edit-rt-dusun').append('<option data-tokens="'+ dusun.nama_dusun +'" value="'+ dusun.id +'">'+ dusun.nama_dusun +'</option>');
               });  
             $('#edit-rt-dusun').selectpicker('refresh');        
         });
@@ -500,7 +516,7 @@ $(function() {
           $('#edit-rt-rw').selectpicker('refresh');
             $('#edit-rt-rw').append('<option value="">Pilih rw</option>');
               $.each(data, function(index, rw){
-                $('#edit-rt-rw').append('<option value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
+                $('#edit-rt-rw').append('<option data-tokens="'+ rw.nama_rw +'" value="'+ rw.id +'">'+ rw.nama_rw +'</option>');
               });  
             $('#edit-rt-rw').selectpicker('refresh');        
         });
