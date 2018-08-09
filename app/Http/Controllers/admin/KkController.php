@@ -9,13 +9,19 @@ use Yajra\Datatables\Datatables;
 
 use Auth;
 use App\Kk;
-class Kkcontroller extends Controller
+class KkController extends Controller
 {
     public function index()
     {
     	$data['user'] 	= Auth::user();
     	$data['title']	= "Data Kartu Keluarga";
     	return view('admin.kk.data')->with($data);
+    }
+
+    public function fetchKkAll()
+    {
+      $kk = Kk::select(['id', 'nomor_kk'])->get();
+      return response()->json($kk);
     }
 
     public function fetchKk()
@@ -31,7 +37,7 @@ class Kkcontroller extends Controller
                        data-token="'.csrf_token().'"><i class="glyphicon glyphicon-remove">Delete</a>';
             })
           ->editColumn('nomor_kk', function($kk){
-                return "<a href='#tab_2' data-id='".$kk->id."' data-toggle='tab' class='kartu_keluarga'>".$kk->nomor_kk." <span class='glyphicon glyphicon-new-window'></span></a>";
+                return '<a href="#tab_2" data-id="'.$kk->id.'" onclick="tes()" data-toggle="tab" class="kartu_keluarga">'.$kk->nomor_kk.' <span class="glyphicon glyphicon-new-window"></span></a>';
             })
           	->addIndexColumn()
             ->rawColumns(['nomor_kk','action'])

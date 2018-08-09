@@ -105,7 +105,7 @@ class PendudukController extends Controller
     public function fetchDataPenduduk($penduduk)
     {
     	$penduduk = Penduduk::where('id',$penduduk)->get();
-    	
+
     	return response()->json($penduduk);
     }
 
@@ -127,4 +127,8 @@ class PendudukController extends Controller
     	return view('admin.penduduk.show-modal')->with($data);
     }
 
+    public function fetchPendudukAll() {
+      $penduduk = Penduduk::select(['id', 'nik'])->get();
+      return response()->json($penduduk);
+    }
 }

@@ -26,5 +26,3 @@ class Penduduk extends Model
     }
 
 }
-
-

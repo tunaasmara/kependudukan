@@ -199,3 +199,59 @@
                   </div>
                   <!-- /.modal-dialog -->
                 </div>
+
+                <div class="modal fade" id="modal-anggota-kk">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <div class="col-md-10">
+                                          <h2>Tambah Anggota</h2>
+                                        </div>
+                                        <div class="col-md-2">
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span></button>
+                                        </div>
+                                      </div>
+                                      <div class="modal-body">
+                                       {!! Form::open(['id'=>'form-kk-input','route' => 'kk.store']) !!}
+                                       {{Form::token()}}
+                                                  <div class="form-group row required">
+                                                      {!! Form::label("nomor_kk","Nomor kk",["class"=>"col-form-label col-md-2"]) !!}
+                                                      <div class="col-md-10">
+                                                          {!! Form::text("nomor_kk",null,["class"=>"form-control inputan-kk".($errors->has('nomor_kk')?" is-invalid":""),'placeholder'=>'Nomor Kk','id'=>'anggota-nomor_kk','disabled']) !!}
+                                                          <span id="error-kk-nomor_kk" class="invalid-feedback inputan-error-kk"></span>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group row required">
+                                                      {!! Form::label("penduduk","Id Penduduk",["class"=>"col-form-label col-md-2"]) !!}
+                                                      <div class="col-md-10">
+                                                          <select data-live-search="true" class="selectpicker inputan-kk form-control{{($errors->has('provinsi')?' is-invalid':'')}}" name="penduduk" id="anggota_penduduk">
+                                                        </select>
+                                                          <span id="error-kk-provinsi" class="invalid-feedback inputan-error-kk"></span>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group row required">
+                                                      {!! Form::label("passport","Nomor Passport",["class"=>"col-form-label col-md-2"]) !!}
+                                                      <div class="col-md-10">
+                                                          {!! Form::text("Nomor Passport",null,["class"=>"form-control inputan-kk".($errors->has('passport')?" is-invalid":""),'placeholder'=>'Nomor Passport']) !!}
+                                                          <span id="error-kk-kode_pos" class="invalid-feedback inputan-error-kk"></span>
+                                                      </div>
+                                                  </div>
+                                                  <div class="form-group row required">
+                                                      {!! Form::label("status","Status",["class"=>"col-form-label col-md-2"]) !!}
+                                                      <div class="col-md-10">
+                                                        {!! Form::textarea('status',null,['class'=>"form-control inputan-kk".($errors->has('status')?" is-invalid":""), 'rows' => 2, 'cols' => 40,'placeholder'=>'Status']) !!}
+                                                          <span id="error-kk-alamat" class="invalid-feedback inputan-error-kk"></span>
+                                                      </div>
+                                                  </div>
+                                      </div>
+                                      <div class="modal-footer">
+                                        {!! Form::submit("Save",["class"=>"btn btn-primary pull-right"])!!}
+                                        <a href="#" class="btn btn-danger pull-left" data-dismiss="modal">Close</a>
+                                      </div>
+                                       {!! Form::close() !!}
+                                    </div>
+                                    <!-- /.modal-content -->
+                                  </div>
+                                  <!-- /.modal-dialog -->
+                                </div>

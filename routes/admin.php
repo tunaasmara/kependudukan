@@ -45,10 +45,13 @@ Route::resource('penduduk', 'PendudukController');
 Route::get('/fetchPenduduk', 'PendudukController@fetchPenduduk');
 Route::post('/pendudukAktifKtp/{penduduk}', 'PendudukController@pendudukAktifKtp');
 Route::get('/fetchDataPenduduk/{rt}', 'PendudukController@fetchDataPenduduk');
+Route::get('/fetchPendudukAll', 'PendudukController@fetchPendudukAll');
 
 // rw
 Route::resource('kk', 'KkController');
 Route::get('/fetchKk', 'KkController@fetchKk');
+Route::get('/fetchKkAll', 'KkController@fetchKkAll');
+Route::get('/fetchAnggotaKk', 'AnggotaKkController@fetchAnggotaKk');
 
 // rw
 Route::resource('pekerjaan', 'PekerjaanController');

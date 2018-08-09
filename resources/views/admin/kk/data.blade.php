@@ -98,23 +98,26 @@
               <div class="tab-pane" id="tab_2">
                 <div class="box">
                   <div class="box-header">
-                    <h3 class="box-title">Data Anggota kartu Keluarga</h3>
-                    <button type="button" class="btn btn-primary pull-right" onclick="" data-toggle="modal" data-target="#modal-rw">
+                    <h3 class="box-title" onclick="tes()">Data Anggota kartu Keluarga</h3>
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modal-anggota-kk" id="modal-anggota-kk">
                       Tambah Data
                     </button>
                   </div>
+                  <div class="form-group row">
+                        <div class="col-md-3">
+                          <select data-live-search="true" class="selectpicker inputan-kk form-control" id="kk">
+                        </select>
+                      </div>
+                  </div>
                   <div class="box-body">
-                    <table id="data-rw" class="table table-bordered table-hover">
+                    <table id="anggota" class="table table-bordered table-hover">
                       <thead>
                           <tr>
                             <th>No</th>
-                            <th>Rw</th>
-                            <th>Kepala Rw</th>
-                            <th>Dusun</th>
-                            <th>Desa</th>
-                            <th>Kecamatan</th>
-                            <th>Kabupaten</th>
-                            <th>Provinsi</th>
+                            <th>Nomor KK</th>
+                            <th>Nama</th>
+                            <th>Nomor Paspor</th>
+                            <th>Status</th>
                             <th>Action</th>
                           </tr>
                           </thead>
@@ -123,13 +126,10 @@
                           <tfoot>
                           <tr>
                             <th>No</th>
-                            <th>Rw</th>
-                            <th>Kepala Rw</th>
-                            <th>Dusun</th>
-                            <th>Desa</th>
-                            <th>Kecamatan</th>
-                            <th>Kabupaten</th>
-                            <th>Provinsi</th>
+                            <th>Nomor KK</th>
+                            <th>Nama</th>
+                            <th>Nomor Paspor</th>
+                            <th>Status</th>
                             <th>Action</th>
                           </tr>
                           </tfoot>
@@ -170,6 +170,7 @@
     var id = $(e.target).attr("href").substr(1);
     window.location.hash = id+"_uri";
   });
+
 
   // on load of the page: switch to the currently selected tab
   var hash = window.location.hash;
