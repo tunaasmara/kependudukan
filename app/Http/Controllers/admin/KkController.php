@@ -30,7 +30,7 @@ class KkController extends Controller
 
           return Datatables::of($kk)
           ->addColumn('action', function ($kk) {
-                return '<button class="kk-edit btn btn-xs btn-warning" data-id="'.$kk->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</button> <input type="hidden" name="_method" value="delete"/>
+                return '<a href="'.route("kk.show",$kk->id).'" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#show-modal"> Show Detail</a> <button class="kk-edit btn btn-xs btn-warning" data-id="'.$kk->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</button> <input type="hidden" name="_method" value="delete"/>
                     <a class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
                        href="#modalDelete-kk"
                        data-id="'.$kk->id.'"
@@ -42,6 +42,48 @@ class KkController extends Controller
           	->addIndexColumn()
             ->rawColumns(['nomor_kk','action'])
             ->make(true);
+    }
+
+    public function fetchDataKk($kk)
+    {
+        $kk = Kk::where('id',$kk)->get();
+        
+        return response()->json($kk);
+    }
+
+    public function update(Request $request,$kk)
+    {
+        $rules = [
+            'nomor_kk'                  => 'required|string|max:20',
+            'alamat'                    => 'required|string|max:255',
+            'kode_pos'                  => 'required',
+            'tanggal_dikeluarkan'       => 'required',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+            if ($validator->fails())
+                return response()->json([
+                    'fail' => true,
+                    'errors' => $validator->errors()
+                ]);
+            $kk                         = Kk::find($kk);
+            $kk->nomor_kk               = $request->nomor_kk;
+            $kk->alamat                 = $request->alamat;
+            $kk->kode_pos               = $request->kode_pos;
+            $kk->tanggal_dikeluarkan    = $request->tanggal_dikeluarkan;
+            $kk->update();
+
+            return response()->json([
+                'fail' => false,
+            ]);
+    }
+
+    public function destroy($kk)
+    {
+        $kk = Kk::find($kk);
+        $kk->anggota_kk()->delete();
+        $kk->delete();
+        return response()->json(['success'=>true]);
     }
 
     public function store(Request $request)
@@ -73,5 +115,12 @@ class KkController extends Controller
             return response()->json([
                 'fail' => false,
             ]);
+    }
+
+    public function show($kk)
+    {
+        $data['kk'] = Kk::find($kk);
+
+        return view('admin.kk.show-modal')->with($data);
     }
 }

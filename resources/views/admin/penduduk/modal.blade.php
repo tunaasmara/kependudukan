@@ -278,3 +278,16 @@
                     </div>
                   </div>
                 </div>
+<div class="modal fade" id="edit-modal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
+                </div>

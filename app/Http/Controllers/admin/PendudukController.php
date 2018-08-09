@@ -33,7 +33,7 @@ class PendudukController extends Controller
                       }
                 $link .= '<a href="'.route("penduduk.show",$penduduk->id).'" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#show-modal"> Show Detail</a> ';
 
-                $link .= '<button class="penduduk-edit btn btn-xs btn-warning" data-id="'.$penduduk->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</button> ';
+                $link .= '<a href="'.route("penduduk.edit",$penduduk->id).'" class="penduduk-edit btn btn-xs btn-warning" data-toggle="modal" data-target="#edit-modal" data-id="'.$penduduk->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</a> ';
 
                 $link .= '<input type="hidden" name="_method" value="delete"/>
                     <a class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
@@ -52,6 +52,39 @@ class PendudukController extends Controller
           	->addIndexColumn()
           	->rawColumns(['status_ktp','action'])
             ->make(true);
+    }
+
+    public function update(Request $request,$penduduk)
+    {
+      $rules = [
+            'nik'               => 'required|string|max:20',
+            'nama'              => 'required|string|max:50',
+            'tempat_lahir'      => 'required|string|max:255',
+            'status_perkawinan' => 'required|string|max:255',
+            'nama_ibu'          => 'required|string|max:255',
+            'nama_ayah'         => 'required|string|max:255',
+            'nomer_telepon'     => 'required',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+            if ($validator->fails())
+                return response()->json([
+                    'fail' => true,
+                    'errors' => $validator->errors()
+                ]);
+            $penduduk                     = Penduduk::find($penduduk);
+            $penduduk->nik                = $request->nik;
+            $penduduk->nama               = $request->nama;
+            $penduduk->tempat_lahir       = $request->tempat_lahir;
+            $penduduk->status_perkawinan  = $request->status_perkawinan;
+            $penduduk->nama_ibu           = $request->nama_ibu;
+            $penduduk->nama_ayah          = $request->nama_ayah;
+            $penduduk->nomer_telepon      = $request->nomer_telepon;
+            $penduduk->update();
+
+            return response()->json([
+                'fail' => false,
+            ]);
     }
 
    public function store(Request $request)
@@ -122,13 +155,22 @@ class PendudukController extends Controller
 
     public function show($penduduk)
     {
-    	$data['penduduk'] = Penduduk::find($penduduk);
+    	$data['penduduks'] = Penduduk::where('id',$penduduk)->get();
 
     	return view('admin.penduduk.show-modal')->with($data);
     }
+
 
     public function fetchPendudukAll() {
       $penduduk = Penduduk::select(['id', 'nik'])->get();
       return response()->json($penduduk);
     }
+
+    public function edit($penduduk)
+    {
+      $data['penduduks'] = Penduduk::where('id',$penduduk)->get();
+      return view('admin.penduduk.edit-modal')->with($data);
+    }
+
+
 }

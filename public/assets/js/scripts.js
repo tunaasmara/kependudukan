@@ -248,6 +248,41 @@ function PendudukProvinsiLoads()
 
     });
 
+$(document).on('submit', 'form#form-edit-penduduk', function (event) {
+    event.preventDefault();
+    var form = $(this);
+    var data = new FormData($(this)[0]);
+    var url = form.attr("action");
+    $.ajax({
+        type: form.attr('method'),
+        url: url,
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            $('.is-invalid').removeClass('is-invalid');
+            if (data.fail) {
+                if (data.fail) {
+                     status = "<div class='alert alert-danger'><ul>";
+                    for (control in data.errors) {
+                        status += "<li>"+data.errors[control]+"</li>";
+                    }
+                    status += "</ul></div>";
+                    $("#status-edit").html(status);
+            } else {
+                $('#edit-modal').modal('hide');
+                pendudukTable.draw();
+            }
+          }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            alert("Error: " + errorThrown);
+        }
+    });
+    return false;
+});
+
 jQuery(document).ready(function() {
 
 	
@@ -439,3 +474,10 @@ function ajaxPendudukDelete(filename, token, content) {
         }
     });
  }
+
+ $('body').on('hidden.bs.modal', '#show-modal', function () {
+        $(this).removeData('bs.modal');
+    });
+ $('body').on('hidden.bs.modal', '#edit-modal', function () {
+        $(this).removeData('bs.modal');
+    });

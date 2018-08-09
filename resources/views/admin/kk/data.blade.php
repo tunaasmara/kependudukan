@@ -76,6 +76,8 @@
                           <tr>
                             <th>No</th>
                             <th>Nomor Kartu Keluarga</th>
+                            <th>Alamat</th>
+                            <th>Tanggal Dikeluarkan</th>
                             <th>Action</th>
                           </tr>
                           </thead>
@@ -85,6 +87,8 @@
                           <tr>
                             <th>No</th>
                             <th>Nomor Kartu Keluarga</th>
+                            <th>Alamat</th>
+                            <th>Tanggal Dikeluarkan</th>
                             <th>Action</th>
                           </tr>
                           </tfoot>
