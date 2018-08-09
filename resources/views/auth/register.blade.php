@@ -31,7 +31,7 @@
             </p>
             <p>Daftarkan diri Anda</p>
 
-            <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
+            <form method="POST" action="{{route('register') }}" aria-label="{{ __('Register') }}">
                 @csrf
                 <div class="form-group">
                         <input id="name" placeholder="Nama Lengkap" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
