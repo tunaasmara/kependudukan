@@ -51,9 +51,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('pendudukKtp')}}">Penduduk</a></li>
-            <li><a href="{{route('pendudukKtp')}}">KTP</a></li>
-            <li><a href="{{route('pendudukSku')}}">Surat Keterangan Usaha</a></li>
+            <li><a href="{{route('penduduk.index')}}">Penduduk</a></li>
+            <li><a href="{{route('kk.index')}}">Kartu Keluarga</a></li>
           </ul>
         </li>
         <li class="treeview">

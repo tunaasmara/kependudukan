@@ -113,4 +113,13 @@ class RtController extends Controller
                 'fail' => false,
             ]);
     }
+
+    public function formFetchRt($rw)
+    {
+        if (isset($rw)) {
+             $rt = Rt::where('id_rw',$rw)->get();
+             return response()->json($rt);
+        }
+       
+    }
 }

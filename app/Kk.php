@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Uuid;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\AnggotaKk;
 class Kk extends Model
 {
-    use Uuid;
+    use Uuid,SoftDeletes;
 	public $timestamps = false;
     public $incrementing = false;
 

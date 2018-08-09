@@ -57,7 +57,7 @@
         <div class="col-md-12">
           <!-- Custom Tabs -->
           <div class="nav-tabs-custom">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs" id="myTab">
               <li class="active" ><a href="#tab_1" data-toggle="tab">Dusun</a></li>
               <li><a href="#tab_2" data-toggle="tab">RW</a></li>
               <li><a href="#tab_3" data-toggle="tab">RT</a></li>
@@ -220,5 +220,27 @@
 <script src="{{ asset('js/alamat-dusun.js')}}"></script>
 <script src="{{ asset('js/alamat-rw.js')}}"></script>
 <script src="{{ asset('js/alamat-rt.js')}}"></script>
+
+<script type="text/javascript">
+  $('#myTab a').click(function(e) {
+    e.preventDefault();
+    $(this).tab('show');
+  });
+
+  // store the currently selected tab in the hash value
+  $("ul.nav-tabs > li > a").on("shown.bs.tab", function(e) {
+    var id = $(e.target).attr("href").substr(1);
+    window.location.hash = "/"+id+"_uri/";
+  });
+
+  // on load of the page: switch to the currently selected tab
+  var hash = window.location.hash;
+  var spl = hash.split("/");
+
+  var res = spl[1].replace("_uri", "");
+  console.log(res);
+  $('#myTab a[href="#' + res + '"]').tab('show');
+
+</script>
 
 @endsection

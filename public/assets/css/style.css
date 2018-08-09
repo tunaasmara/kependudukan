@@ -1,5 +1,5 @@
 
-strong { font-weight: 500; }
+/*strong { font-weight: 500; }*/
 
 a, a:hover, a:focus {
 	color: #3c8dbc;
@@ -7,7 +7,7 @@ a, a:hover, a:focus {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
-h1, h2 {
+/*h1, h2 {
 	margin-top: 10px;
 	font-size: 38px;
     font-weight: 100;
@@ -27,7 +27,7 @@ h4 {
     font-weight: 300;
     color: #555;
     line-height: 26px;
-}
+}*/
 
 img { max-width: 100%; }
 
@@ -46,10 +46,10 @@ img { max-width: 100%; }
 }
 .navbar.navbar-no-bg { background: none; }
 
-ul.navbar-nav {
+/*ul.navbar-nav {
 	font-size: 16px;
 	color: #fff;
-}
+}*/
 
 .navbar-inverse ul.navbar-nav li { padding-top: 8px; padding-bottom: 8px; }
 
@@ -59,11 +59,11 @@ ul.navbar-nav {
 .navbar-inverse ul.navbar-nav li a:hover { color: #fff; opacity: 1; border-bottom: 1px dotted #fff; }
 .navbar-inverse ul.navbar-nav li a:focus { color: #fff; outline: 0; opacity: 1; border-bottom: 1px dotted #fff; }
 
-.navbar-inverse ul.navbar-nav li .li-social a {
+/*.navbar-inverse ul.navbar-nav li .li-social a {
 	margin: 0 5px;
 	font-size: 28px;
 	vertical-align: middle;
-}
+}*/
 .navbar-inverse ul.navbar-nav li .li-social a:hover,
 .navbar-inverse ul.navbar-nav li .li-social a:focus { border: 0; color: #3c8dbc; }
 
@@ -145,7 +145,7 @@ ul.navbar-nav {
 
 @media (max-width: 415px) {
 
-	h1, h2 { font-size: 32px; }
+	/*h1, h2 { font-size: 32px; }*/
 
 	.f1 { padding-bottom: 20px; }
 	.f1-buttons button { margin-bottom: 5px; }
