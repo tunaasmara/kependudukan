@@ -5,6 +5,8 @@
         columns: [
             { data: 'DT_Row_Index', name: 'DT_Row_Index',orderable: false, searchable: false },
             { data: 'nomor_kk', name: 'nomor_kk' },
+            { data: 'alamat', name: 'alamat' },
+            { data: 'tanggal_dikeluarkan', name: 'tanggal_dikeluarkan' },
             { data: 'action', name: 'action',orderable: false, searchable: false }
 
         ]
@@ -52,7 +54,7 @@
       $(this).find(".inputan-error-kk").html('');
   });
 
-  function ajaxDesaDelete(filename, token, content) {
+  function ajaxkkDelete(filename, token, content) {
     content = typeof content !== 'undefined' ? content : 'content';
     kkTable.draw();
     $.ajax({
@@ -60,7 +62,7 @@
         data: {_method: 'DELETE', _token: token},
         url: filename,
         success: function (data) {
-            $('#modalDelete-desa').modal('hide');
+            $('#modalDelete-kk').modal('hide');
             $("#" + content).html(data);
             kkTable.draw();
         },
@@ -70,28 +72,31 @@
     });
 }
 
-  $('#modalDelete-desa').on('show.bs.modal', function (event) {
+  $('#modalDelete-kk').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);
-      $('#desa_delete_id').val(button.data('id'));
-      $('#desa_delete_token').val(button.data('token'));
+      $('#kk_delete_id').val(button.data('id'));
+      $('#kk_delete_token').val(button.data('token'));
   });
 
-  $(document).on('click', '.desa-edit', function(){
+  $(document).on('click', '.kk-edit', function(){
         var id = $(this).data('id');
         $.ajax({
-            url:"/admin/fetchDataDesa/"+id,
+            url:"/admin/fetchDataKk/"+id,
             method:'get',
             dataType:'json',
             success:function(data)
             {
-                $('#edit-desa-nama_desa').val(data[0].nama_desa);
-                $('#edit-desa-kepala_desa').val(data[0].kepala_desa);
-                $('#form-edit-desa').attr('action', "/admin/desa/"+id);
-                desaProvinsiEdit(data[0].kecamatan.id,data[0].kecamatan.kabupaten.id,data[0].kecamatan.kabupaten.provinsi.id);
-                $('#modal-edit-desa').modal('show');
+                $('#edit-kk-nomor_kk').val(data[0].nomor_kk);
+                $('#edit-kk-kode_pos').val(data[0].kode_pos);
+                $('#edit-kk-alamat').val(data[0].alamat);
+                $('#edit-kk-tanggal_dikeluarkan').val(data[0].tanggal_dikeluarkan);
+                $('#form-edit-kk').attr('action', "/admin/kk/"+id);
+                $('#modal-edit-kk').modal('show');
             }
         });
     });
+
+  
 
   function desaKecamatanEdit(id,kabupaten)
   {
@@ -136,7 +141,7 @@
   }
 
 
-  $(document).on('submit', 'form#form-edit-desa', function (event) {
+  $(document).on('submit', 'form#form-edit-kk', function (event) {
     event.preventDefault();
     var form = $(this);
     var data = new FormData($(this)[0]);
@@ -152,11 +157,11 @@
             $('.is-invalid').removeClass('is-invalid');
             if (data.fail) {
                 for (control in data.errors) {
-                    $('#edit-desa-' + control).addClass('is-invalid');
-                    $('#errors-edit-desa-' + control).html(data.errors[control]);
+                    $('#edit-kk-' + control).addClass('is-invalid');
+                    $('#errors-edit-kk-' + control).html(data.errors[control]);
                 }
             } else {
-                $('#modal-edit-desa').modal('hide');
+                $('#modal-edit-kk').modal('hide');
                 kkTable.draw();
             }
         },

@@ -117,7 +117,7 @@
                     <div class="modal-content">
                       <div class="modal-header">
                         <div class="col-md-10">
-                          <h2>Data User</h2>
+                          <h2>Data Rt</h2>
                         </div>
                         <div class="col-md-2">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">

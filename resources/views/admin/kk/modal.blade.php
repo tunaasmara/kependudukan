@@ -109,7 +109,7 @@
                   <!-- /.modal-dialog -->
                 </div>
 
-                <div class="modal fade" id="modalDelete-desa" tabindex="-1" role="dialog" data-backdrop="static">
+                <div class="modal fade" id="modalDelete-kk" tabindex="-1" role="dialog" data-backdrop="static">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -120,13 +120,13 @@
                             </div>
                             <div class="modal-body">
                                 <p>Are you sure want to delete?</p>
-                                <input type="hidden" id="desa_delete_token"/>
-                                <input type="hidden" id="desa_delete_id"/>
+                                <input type="hidden" id="kk_delete_token"/>
+                                <input type="hidden" id="kk_delete_id"/>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                                 <button type="button" class="btn btn-danger"
-                                        onclick="ajaxDesaDelete('{{url('admin/desa/')}}/'+$('#desa_delete_id').val(),$('#desa_delete_token').val())">
+                                        onclick="ajaxkkDelete('{{url('admin/kk/')}}/'+$('#kk_delete_id').val(),$('#kk_delete_token').val())">
                                     Delete
                                 </button>
                             </div>
@@ -134,12 +134,12 @@
                     </div>
                 </div>
 
-                <div class="modal fade" id="modal-edit-desa">
+                <div class="modal fade" id="modal-edit-kk">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
                         <div class="col-md-10">
-                          <h2>Data User</h2>
+                          <h2>Data kk</h2>
                         </div>
                         <div class="col-md-2">
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -147,45 +147,36 @@
                         </div>
                       </div>
                       <div class="modal-body">
-                      <form method="POST" id="form-edit-desa">
+                      <form method="POST" id="form-edit-kk">
                       <input type="hidden" name="_method" value="PUT">
                       <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+
                                   <div class="form-group row required">
-                                          <label for="provinsi" class="col-form-label col-md-2">Provinsi</label>
-                                          <div class="col-md-10">
-                                              <select class="form-control" name="provinsi" onchange="desaEditKabupatenLoads()" id="edit-desa-provinsi">
-                                            </select>
-                                              <span id="errors-edit-desa-provinsi" class="invalid-feedback"></span>
-                                          </div>
-                                  </div>
-                                  <div class="form-group row required">
-                                          <label for="kabupaten" class="col-form-label col-md-2">Kabupaten</label>
-                                          <div class="col-md-10">
-                                              <select class="form-control" onchange="desaEditKecamatanLoads()" name="kabupaten" id="edit-desa-kabupaten">
-                                            </select>
-                                              <span id="errors-edit-desa-kabupaten" class="invalid-feedback"></span>
-                                          </div>
-                                  </div>
-                                  <div class="form-group row required">
-                                          <label for="kecamatan" class="col-form-label col-md-2">Kecamatan</label>
-                                          <div class="col-md-10">
-                                              <select class="form-control" name="kecamatan" id="edit-desa-kecamatan">
-                                            </select>
-                                              <span id="errors-edit-desa-kecamatan" class="invalid-feedback"></span>
-                                          </div>
-                                  </div>
-                                  <div class="form-group row required">
-                                      <label for="nama_desa" class="col-form-label col-md-2">Nama desa</label>
+                                      <label for="nomor_kk" class="col-form-label col-md-2">Nomor kk</label>
                                       <div class="col-md-10">
-                                          <input class="form-control" id="edit-desa-nama_desa" name="nama_desa" type="text">
-                                          <span id="errors-edit-desa-nama_desa" class="invalid-feedback"></span>
+                                          <input class="form-control" id="edit-kk-nomor_kk" name="nomor_kk" type="text">
+                                          <span id="errors-edit-kk-nomor_kk" class="invalid-feedback errors-edit-kk"></span>
                                       </div>
                                   </div>
                                   <div class="form-group row required">
-                                      <label for="kepala_desa" class="col-form-label col-md-2">Kepala Desa</label>
+                                      <label for="kode_pos" class="col-form-label col-md-2">Kode Pos</label>
                                       <div class="col-md-10">
-                                          <input class="form-control" id="edit-desa-kepala_desa" name="kepala_desa" type="text">
-                                          <span id="errors-edit-desa-kepala_desa" class="invalid-feedback"></span>
+                                          <input class="form-control" id="edit-kk-kode_pos" name="kode_pos" type="text">
+                                          <span id="errors-edit-kk-kode_pos" class="invalid-feedback errors-edit-kk"></span>
+                                      </div>
+                                  </div>
+                                  <div class="form-group row required">
+                                      <label for="alamat" class="col-form-label col-md-2">Alamat</label>
+                                      <div class="col-md-10">
+                                          <textarea class="form-control" id="edit-kk-alamat" name="alamat" ></textarea>
+                                          <span id="errors-edit-kk-alamat" class="invalid-feedback errors-edit-kk"></span>
+                                      </div>
+                                  </div>
+                                  <div class="form-group row required">
+                                      <label for="tanggal_dikeluarkan" class="col-form-label col-md-2">Tanggal Dikeluarkan</label>
+                                      <div class="col-md-10">
+                                          <input type="date" class="form-control" id="edit-kk-tanggal_dikeluarkan" name="tanggal_dikeluarkan" >
+                                          <span id="errors-edit-kk-tanggal_dikeluarkan" class="invalid-feedback errors-edit-kk"></span>
                                       </div>
                                   </div>
                       </div>
@@ -198,4 +189,18 @@
                     <!-- /.modal-content -->
                   </div>
                   <!-- /.modal-dialog -->
+                </div>
+
+      <div class="modal fade" id="show-modal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                      </div>
+                    </div>
+                  </div>
                 </div>

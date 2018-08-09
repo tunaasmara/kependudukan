@@ -5,6 +5,7 @@
 <div class="modal-body">
 	<table class="table table-stripped">
                     <tbody>
+                    @foreach ($penduduks as $penduduk)
                       <tr>
                         <td>NIK</td>
                         <td>{{$penduduk->nik}}</td>
@@ -93,6 +94,7 @@
                         <td>Nomer Telepon</td>
                         <td>{{$penduduk->nomer_telepon}}</td>
                       </tr>  
+                    @endforeach
                     </tbody>
                   </table>
 </div>

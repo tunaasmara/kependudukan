@@ -49,6 +49,7 @@ Route::get('/fetchDataPenduduk/{rt}', 'PendudukController@fetchDataPenduduk');
 // rw
 Route::resource('kk', 'KkController');
 Route::get('/fetchKk', 'KkController@fetchKk');
+Route::get('/fetchDataKk/{kk}', 'KkController@fetchDataKk');
 
 // rw
 Route::resource('pekerjaan', 'PekerjaanController');
