@@ -19,7 +19,7 @@ Route::get('/fetchUser', ['as' => 'fetch.user', 'uses' => 'UserController@fetchU
 Route::get('/fetchDataUser/{user}', ['as' => 'fetch.data.user', 'uses' => 'UserController@fetchDataUser']);
 Route::get('/fetchRoles', ['as' => 'fetch.roles', 'uses' => 'UserController@fetchRoles']);
 
-// Alamat CRUD
+// Alamat Index
 Route::get('/alamat', 'AlamatController@index')->name('admin.alamat');
 
 // // kabupaten
@@ -40,21 +40,24 @@ Route::get('/fetchRw', 'RwController@fetchRw');
 Route::get('/fetchDataRw/{rw}', 'RwController@fetchDataRw');
 Route::get('/formFetchRw/{dusun}', 'RwController@formFetchRw');
 
-// rw
+// penduduk
 Route::resource('penduduk', 'PendudukController');
 Route::get('/fetchPenduduk', 'PendudukController@fetchPenduduk');
 Route::post('/pendudukAktifKtp/{penduduk}', 'PendudukController@pendudukAktifKtp');
 Route::get('/fetchDataPenduduk/{rt}', 'PendudukController@fetchDataPenduduk');
-Route::get('/fetchPendudukAll', 'PendudukController@fetchPendudukAll');
+Route::get('/fetchAnggotaPenduduk', 'PendudukController@fetchAnggotaPenduduk');
 
-// rw
+// anggota kk
+Route::resource('anggota', 'AnggotaKkController');
+Route::get('/fetchAnggotaKk', 'AnggotaKkController@fetchAnggotaKk');
+
+// kk
 Route::resource('kk', 'KkController');
 Route::get('/fetchKk', 'KkController@fetchKk');
 Route::get('/fetchKkAll', 'KkController@fetchKkAll');
-Route::get('/fetchAnggotaKk', 'AnggotaKkController@fetchAnggotaKk');
 Route::get('/fetchDataKk/{kk}', 'KkController@fetchDataKk');
 
-// rw
+// pekerjaan
 Route::resource('pekerjaan', 'PekerjaanController');
 Route::get('/fetchPekerjaan', 'PekerjaanController@fetchPekerjaan');
 Route::get('/fetchDataPekerjaan/{pekerjaan}', 'PekerjaanController@fetchDataPekerjaan');
@@ -67,6 +70,8 @@ Route::get('/fetchDataRt/{rt}', 'RtController@fetchDataRt');
 Route::get('/formFetchRt/{rw}', 'RtController@formFetchRt');
 
 
+
+// test
 Route::get('/surat-input', 'AdminHomeController@suratInput')->name('suratInput');
 Route::get('/surat-data', 'AdminHomeController@suratData')->name('suratData');
 

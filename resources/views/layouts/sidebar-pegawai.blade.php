@@ -39,30 +39,8 @@
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('suratInput')}}">Input Permohonan Surat</a></li>
-            <li><a href="{{route('suratData')}}">Data Permohonan Surat</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Identitas Penduduk</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('pendudukKtp')}}">KTP</a></li>
-            <li><a href="{{route('pendudukSku')}}">Surat Keterangan Usaha</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#"><i class="fa fa-book"></i> <span>Kartu Keluarga</span>
-            <span class="pull-right-container">
-                <i class="fa fa-angle-left pull-right"></i>
-              </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="{{route('kkInput')}}">Input KK</a></li>
-            <li><a href="{{route('kkData')}}">Data KK</a></li>
+            <li><a href="#">Ajukan Permohonan Surat</a></li>
+            <li><a href="#">Data Permohonan Surat</a></li>
           </ul>
         </li>
       </ul>

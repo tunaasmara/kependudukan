@@ -25,9 +25,9 @@ class AnggotaKkController extends Controller
 
         return Datatables::of($kk)
         ->addColumn('action', function ($kk) {
-              return '<button class="kk-edit btn btn-xs btn-warning" data-id="'.$kk->id.'"><i class="glyphicon glyphicon-edit"></i> Edit</button> <input type="hidden" name="_method" value="delete"/>
+              return '<input type="hidden" name="_method" value="delete"/>
                   <a class="btn btn-danger btn-xs" title="Delete" data-toggle="modal"
-                     href="#modalDelete-kk"
+                     href="#modalDelete-anggota"
                      data-id="'.$kk->id.'"
                      data-token="'.csrf_token().'"><i class="glyphicon glyphicon-remove">Delete</a>';
           })
@@ -38,4 +38,35 @@ class AnggotaKkController extends Controller
           ->rawColumns(['nomor_kk','action'])
           ->make(true);
   }
+
+  public function store(Request $request)
+    {
+      $rules = [
+            'id_kk'               => 'required',
+            'id_penduduk'         => 'required',
+            'no_paspor'           => 'string',
+            'status'              => 'required',
+            ];
+
+            $validator = Validator::make($request->all(), $rules);
+            if ($validator->fails()){
+              return response()->json([
+                    'fail' => true,
+                    'errors' => $validator->errors(),
+                ]);
+            }
+
+            AnggotaKk::create($request->all());
+
+            return response()->json([
+                'fail' => false,
+            ]);
+    }
+
+    public function destroy($anggota)
+    {
+      AnggotaKk::destroy($anggota);
+        return response()->json(['success'=>true]);
+    }
+
 }

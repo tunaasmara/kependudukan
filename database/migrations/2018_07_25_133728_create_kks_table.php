@@ -25,7 +25,7 @@ class CreateKksTable extends Migration
             $table->string('kode_pos',5);
             $table->string('provinsi');
             $table->string('tanggal_dikeluarkan');
-            $table->string('status');
+            $table->string('status')->nullable();
             $table->softDeletes();
         });
     }

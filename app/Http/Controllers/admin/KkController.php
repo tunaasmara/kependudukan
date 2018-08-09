@@ -36,9 +36,6 @@ class KkController extends Controller
                        data-id="'.$kk->id.'"
                        data-token="'.csrf_token().'"><i class="glyphicon glyphicon-remove">Delete</a>';
             })
-          ->editColumn('nomor_kk', function($kk){
-                return '<a href="#tab_2" data-id="'.$kk->id.'" onclick="tes()" data-toggle="tab" class="kartu_keluarga">'.$kk->nomor_kk.' <span class="glyphicon glyphicon-new-window"></span></a>';
-            })
           	->addIndexColumn()
             ->rawColumns(['nomor_kk','action'])
             ->make(true);

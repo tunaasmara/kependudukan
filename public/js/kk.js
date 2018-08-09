@@ -12,7 +12,7 @@
         ]
     });
 
-      var anggotaTable = $('#anggota').DataTable({
+      var anggotaTable = $('#data-anggota').DataTable({
                 dom: 'lBfrtip',
                 processing: true,
                 serverSide: true,
@@ -25,7 +25,7 @@
                     },
                 columns: [
                   { data: 'DT_Row_Index', name: 'DT_Row_Index',orderable: false, searchable: false },
-                  { data: 'kk.nomor_kk', name: 'kk.nomor_kk' },
+                  { data: 'penduduk.nik', name: 'penduduk.nik' },
                   { data: 'penduduk.nama', name: 'penduduk.nama' },
                   { data: 'no_paspor', name: 'no_paspor' },
                   { data: 'status', name: 'status' },
@@ -37,10 +37,11 @@
         $("#kk").on("changed.bs.select",
         function(e, clickedIndex, newValue, oldValue) {
             anggotaTable.draw();
+            $('#tambah-anggota-kk').prop("disabled", false);
         });
 
     $("#data-kk").css("width","100%");
-    $("#anggota").css("width","100%");
+    $("#data-anggota").css("width","100%");
 
     $( "#form-kk-input" ).submit(function( event ) {
     event.preventDefault();
@@ -420,17 +421,82 @@ function fetchKkAll()
 
 function FetchPendudukAll()
 {
-  $.get('/admin/fetchPendudukAll',function(data) {
-        $('#anggota_penduduk').empty();
-        $('#anggota_penduduk').append('<option value="">Pilih Anggota</option>');
+  $.get('/admin/fetchAnggotaPenduduk',function(data) {
+        $('#anggota_id_penduduk').empty();
+        $('#anggota_id_penduduk').append('<option value="">Pilih Anggota</option>');
         $.each(data, function(index, penduduk){
-          $('#anggota_penduduk').append('<option data-tokens="'+ penduduk.nik +'" value="'+ penduduk.id +'">'+ penduduk.nik +'</option>');
+          $('#anggota_id_penduduk').append('<option data-tokens="'+ penduduk.nik +'" value="'+ penduduk.id +'">'+ penduduk.nik +'</option>');
         });
-        $('#anggota_penduduk').selectpicker('refresh');
+        $('#anggota_id_penduduk').selectpicker('refresh');
       });
 }
 
-  $(document).on('click', '#modal-anggota-kk', function(){
+  $(document).on('click', '#tambah-anggota-kk', function(){
     $('#anggota-nomor_kk').val($('#kk').find(':selected').data('tokens'));
+    $('#anggota-id_kk').val($('#kk').val());
     FetchPendudukAll()
+  });
+
+  $( "#form-anggota-input" ).submit(function( event ) {
+    event.preventDefault();
+    $(this).find(".inputan-error-anggota").html('');
+    var form = $(this);
+    var data = new FormData($(this)[0]);
+    var url = form.attr("action");
+    $.ajax({
+        type: form.attr('method'),
+        url: url,
+        data: data,
+        cache: false,
+        dataType: 'JSON',
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            $('.is-invalid').removeClass('is-invalid');
+            if (data.fail) {
+                for (control in data.errors) {
+                    $('input[name=' + control + ']').addClass('is-invalid');
+                    $('#error-anggota-' + control).html(data.errors[control]);
+                }
+            } else {
+                $('#modal-anggota-kk').modal('hide');
+                anggotaTable.draw();
+            }
+        },
+        error: function (xhr, textStatus, errorThrown) {
+            alert("Error: " + errorThrown);
+        }
+    });
+    return false;
+});
+
+  $('#modal-anggota-kk').on('hidden.bs.modal', function () {
+      $('select.inputan-anggota').empty();
+      $('select.inputan-anggota').selectpicker('refresh');
+      $(this).find(".inputan-anggota").val([]);
+      $(this).find(".inputan-error-anggota").html('');
+  });
+
+  function ajaxanggotaDelete(filename, token, content) {
+    content = typeof content !== 'undefined' ? content : 'content';
+    anggotaTable.draw();
+    $.ajax({
+        type: 'POST',
+        data: {_method: 'DELETE', _token: token},
+        url: filename,
+        success: function (data) {
+            $('#modalDelete-anggota').modal('hide');
+            $("#" + content).html(data);
+            anggotaTable.draw();
+        },
+        error: function (xhr, status, error) {
+            alert(xhr.responseText);
+        }
+    });
+}
+
+  $('#modalDelete-anggota').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget);
+      $('#anggota_delete_id').val(button.data('id'));
+      $('#anggota_delete_token').val(button.data('token'));
   });

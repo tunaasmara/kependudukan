@@ -103,7 +103,7 @@
                 <div class="box">
                   <div class="box-header">
                     <h3 class="box-title" onclick="tes()">Data Anggota kartu Keluarga</h3>
-                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modal-anggota-kk" id="modal-anggota-kk">
+                    <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#modal-anggota-kk" id="tambah-anggota-kk" disabled>
                       Tambah Data
                     </button>
                   </div>
@@ -114,11 +114,11 @@
                       </div>
                   </div>
                   <div class="box-body">
-                    <table id="anggota" class="table table-bordered table-hover">
+                    <table id="data-anggota" class="table table-bordered table-hover">
                       <thead>
                           <tr>
                             <th>No</th>
-                            <th>Nomor KK</th>
+                            <th>NIK</th>
                             <th>Nama</th>
                             <th>Nomor Paspor</th>
                             <th>Status</th>
@@ -130,7 +130,7 @@
                           <tfoot>
                           <tr>
                             <th>No</th>
-                            <th>Nomor KK</th>
+                            <th>NIK</th>
                             <th>Nama</th>
                             <th>Nomor Paspor</th>
                             <th>Status</th>

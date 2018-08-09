@@ -17,7 +17,7 @@ class CreateAnggotaKksTable extends Migration
             $table->string('id',36)->primary();
             $table->string('id_kk',36);
             $table->string('id_penduduk',36);
-            $table->string('no_paspor',32);
+            $table->string('no_paspor',32)->nullable();
             $table->string('status');
             $table->softDeletes();
         });

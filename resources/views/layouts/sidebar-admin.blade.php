@@ -20,50 +20,50 @@
         <li class="header">Admin Menu</li>
         <!-- Optionally, you can add icons to the links -->
         <li><a href="#"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
-        <li><a href="{{ route('admin.alamat') }}"><i class="fa fa-dashboard"></i> <span>Alamat</span></a></li>
+        <li><a href="{{ route('admin.alamat') }}"><i class="fa fa-dashboard"></i> <span>Master Alamat</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-folder"></i> <span>Users</span>
+          <a href="#"><i class="fa fa-folder"></i> <span>Master Users</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{route('users.index')}}">Data Users</a></li>
-            <li><a href="{{route('suratData')}}">Data Roles</a></li>
           </ul>
         </li>
 
         <li class="treeview">
-          <a href="#"><i class="fa fa-folder"></i> <span>Permohonan Surat</span>
+          <a href="#"><i class="fa fa-folder"></i> <span>Master Surat surat</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('suratInput')}}">Input Permohonan Surat</a></li>
-            <li><a href="{{route('suratData')}}">Data Permohonan Surat</a></li>
+            <li><a href="#">Data Surat</a></li>
+            <li><a href="#">Persyaratan Surat</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-users"></i> <span>Penduduk</span>
+          <a href="#"><i class="fa fa-users"></i> <span>Master Penduduk</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
+            <li><a href="{{route('pekerjaan.index')}}">Pekerjaan</a></li>
             <li><a href="{{route('penduduk.index')}}">Penduduk</a></li>
             <li><a href="{{route('kk.index')}}">Kartu Keluarga</a></li>
           </ul>
         </li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-book"></i> <span>Kartu Keluarga</span>
+          <a href="#"><i class="fa fa-book"></i> <span>Permohonan</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{route('kkInput')}}">Input KK</a></li>
-            <li><a href="{{route('kkData')}}">Data KK</a></li>
+            <li><a href="#">Surat A</a></li>
+            <li><a href="#">Surat B</a></li>
           </ul>
         </li>
       </ul>

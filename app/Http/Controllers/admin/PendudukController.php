@@ -161,8 +161,9 @@ class PendudukController extends Controller
     }
 
 
-    public function fetchPendudukAll() {
-      $penduduk = Penduduk::select(['id', 'nik'])->get();
+    public function fetchAnggotaPenduduk() {
+      $penduduk = Penduduk::doesntHave('anggota_kk')->select(['id', 'nik'])->get();
+      //$penduduk = Penduduk::select(['id', 'nik'])->get();
       return response()->json($penduduk);
     }
 

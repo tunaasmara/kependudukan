@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+use App\User;
 class RolesTableSeeder extends Seeder
 {
     /**
@@ -29,5 +30,18 @@ class RolesTableSeeder extends Seeder
             'display_name' => 'Level Warga',
             'description' => 'Roles Level Warga',
         ]);
+
+        DB::table('roles')->insert([
+            'name' => 'warga',
+            'display_name' => 'Level Warga',
+            'description' => 'Roles Level Warga',
+        ]);
+
+        $user = User::create([
+            'name' => "Admin User",
+            'email' => "admin@gmail.com",
+            'password' => Hash::make($data['123456']),
+            ]);
+        $user->roles()->attach(1);
     }
 }

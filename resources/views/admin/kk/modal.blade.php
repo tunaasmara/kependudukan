@@ -204,35 +204,42 @@
                                         </div>
                                       </div>
                                       <div class="modal-body">
-                                       {!! Form::open(['id'=>'form-kk-input','route' => 'kk.store']) !!}
+                                       {!! Form::open(['id'=>'form-anggota-input','route' => 'anggota.store']) !!}
                                        {{Form::token()}}
                                                   <div class="form-group row required">
                                                       {!! Form::label("nomor_kk","Nomor kk",["class"=>"col-form-label col-md-2"]) !!}
                                                       <div class="col-md-10">
-                                                          {!! Form::text("nomor_kk",null,["class"=>"form-control inputan-kk".($errors->has('nomor_kk')?" is-invalid":""),'placeholder'=>'Nomor Kk','id'=>'anggota-nomor_kk','disabled']) !!}
-                                                          <span id="error-kk-nomor_kk" class="invalid-feedback inputan-error-kk"></span>
+                                                          {!! Form::text("nomor_kk",null,["class"=>"form-control inputan-anggota".($errors->has('nomor_kk')?" is-invalid":""),'placeholder'=>'Nomor Kk','id'=>'anggota-nomor_kk','disabled']) !!}
+                                                          <input type="hidden" class="form-control" id="anggota-id_kk" name="id_kk" >
+                                                          <span id="error-anggota-nomor_kk" class="invalid-feedback inputan-error-anggota"></span>
                                                       </div>
                                                   </div>
                                                   <div class="form-group row required">
-                                                      {!! Form::label("penduduk","Id Penduduk",["class"=>"col-form-label col-md-2"]) !!}
+                                                      {!! Form::label("id_penduduk","Penduduk",["class"=>"col-form-label col-md-2"]) !!}
                                                       <div class="col-md-10">
-                                                          <select data-live-search="true" class="selectpicker inputan-kk form-control{{($errors->has('provinsi')?' is-invalid':'')}}" name="penduduk" id="anggota_penduduk">
+                                                          <select data-live-search="true" class="selectpicker inputan-anggota form-control{{($errors->has('provinsi')?' is-invalid':'')}}" name="id_penduduk" id="anggota_id_penduduk">
                                                         </select>
-                                                          <span id="error-kk-provinsi" class="invalid-feedback inputan-error-kk"></span>
+                                                          <span id="error-anggota-id_penduduk" class="invalid-feedback inputan-error-anggota"></span>
                                                       </div>
                                                   </div>
                                                   <div class="form-group row required">
-                                                      {!! Form::label("passport","Nomor Passport",["class"=>"col-form-label col-md-2"]) !!}
+                                                      {!! Form::label("no_paspor","Nomor Pasport",["class"=>"col-form-label col-md-2"]) !!}
                                                       <div class="col-md-10">
-                                                          {!! Form::text("Nomor Passport",null,["class"=>"form-control inputan-kk".($errors->has('passport')?" is-invalid":""),'placeholder'=>'Nomor Passport']) !!}
-                                                          <span id="error-kk-kode_pos" class="invalid-feedback inputan-error-kk"></span>
+                                                          {!! Form::text("Nomor Pasport",null,["class"=>"form-control inputan-anggota".($errors->has('no_paspor')?" is-invalid":""),'placeholder'=>'Nomor no_paspor']) !!}
+                                                          <span id="error-anggota-no_paspor" class="invalid-feedback inputan-error-anggota"></span>
                                                       </div>
                                                   </div>
                                                   <div class="form-group row required">
                                                       {!! Form::label("status","Status",["class"=>"col-form-label col-md-2"]) !!}
                                                       <div class="col-md-10">
-                                                        {!! Form::textarea('status',null,['class'=>"form-control inputan-kk".($errors->has('status')?" is-invalid":""), 'rows' => 2, 'cols' => 40,'placeholder'=>'Status']) !!}
-                                                          <span id="error-kk-alamat" class="invalid-feedback inputan-error-kk"></span>
+                                                        <select name="status" class="inputan-wizard form-control{{($errors->has('status')?' is-invalid':'')}}" id="f1-status">
+                                                          <option value="">Pilih Status</option>
+                                                          <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                          <option value="Istri">Istri</option>
+                                                          <option value="Anak">Anak</option>
+                                                          <option value="Famili Lain">Famili Lain</option>
+                                                        </select>
+                                                          <span id="error-anggota-status" class="invalid-feedback inputan-error-anggota"></span>
                                                       </div>
                                                   </div>
                                       </div>
@@ -258,4 +265,29 @@
                       </div>
                     </div>
                   </div>
+                </div>
+
+                <div class="modal fade" id="modalDelete-anggota" tabindex="-1" role="dialog" data-backdrop="static">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Delete Confirmation</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure want to delete?</p>
+                                <input type="hidden" id="anggota_delete_token"/>
+                                <input type="hidden" id="anggota_delete_id"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-danger"
+                                        onclick="ajaxanggotaDelete('{{url('admin/anggota/')}}/'+$('#anggota_delete_id').val(),$('#anggota_delete_token').val())">
+                                    Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
